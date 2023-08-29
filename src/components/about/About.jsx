@@ -6,7 +6,7 @@ export default function About() {
       <div className="container">
         <div className="about_img__thumb">
           <img
-            src="public\img\hero\about\about_photo.jpg"
+            src="../../../public/img/hero/about/about_photo.jpg"
             alt=""
             className="about_img"
             width={520}
