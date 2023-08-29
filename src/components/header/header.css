@@ -43,8 +43,8 @@
   padding: 20px 0;
   background-image: linear-gradient(
     to right,
-    #04b4e0,
-    #04b4e0 50%,
+    var(--primary-brand-color),
+    var(--primary-brand-color) 50%,
     #ffffff 50%
   );
   background-size: 200% 100%;
