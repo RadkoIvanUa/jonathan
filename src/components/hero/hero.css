@@ -8,6 +8,7 @@
     url(../../../public/img/hero/hero_mobile.jpg);
   background-position: center;
   background-size: cover;
+  padding: 100px 0;
   height: 432px;
   background-repeat: no-repeat;
   background-color: #8a8ea3;
@@ -15,13 +16,6 @@
   text-align: center;
 
   position: relative;
-}
-
-.hero > .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .hero_text {
@@ -125,6 +119,15 @@
       ),
       url(../../../public/img/hero/hero.jpg);
     height: 100vh;
+
+    padding: 0;
+  }
+
+  .hero > .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .hero_text {
@@ -149,6 +152,13 @@
     height: 50px;
     font-size: 20px;
     margin-bottom: 100px;
+  }
+
+  .hero_scroll {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 

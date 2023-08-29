@@ -23,13 +23,11 @@ export default function Hero() {
               Download CV
             </a>
           </button>
-          <button className="hero_scroll" type="button">
-            <SlMouse
-              size={windowSize.current[0] < 768 ? 40 : 60}
-              color="white"
-            />
-          </button>
         </div>
+
+        <button className="hero_scroll" type="button">
+          <SlMouse size={windowSize.current[0] < 768 ? 40 : 60} color="white" />
+        </button>
       </div>
     </>
   );
