@@ -27,11 +27,7 @@ body {
   padding-right: 16px;
   margin: 0 auto;
 }
-@media screen and (min-width: 480px) {
-  .container {
-    width: 428px;
-  }
-}
+
 @media (min-width: 768px) {
   .container {
     width: 768px;
