@@ -4,6 +4,7 @@ import "./reset.css";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import { useEffect, useState, useRef } from "react";
+import About from "./components/about/About";
 
 function App() {
   const [scroll, setScroll] = useState(false);
@@ -25,15 +26,17 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div>
+      <div id="home"></div>
       <header>
         <Header className={scroll ? "header stickyadd" : "header"} />
       </header>
       <main>
         <Hero />
+        <About />
       </main>
       <footer></footer>
-    </>
+    </div>
   );
 }
 

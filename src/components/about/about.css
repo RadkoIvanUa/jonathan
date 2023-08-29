@@ -1,0 +1,10 @@
+h1 {
+  font-size: 100px;
+}
+
+.header_nav__item > .active {
+  background-position: 0;
+}
+.mobile_header_nav__item > .active {
+  color: var(--primary-brand-color);
+}

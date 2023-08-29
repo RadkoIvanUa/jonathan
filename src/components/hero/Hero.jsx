@@ -2,6 +2,7 @@ import { useRef } from "react";
 import "./hero.css";
 
 import { SlMouse } from "react-icons/sl";
+import { Link } from "react-scroll";
 
 export default function Hero() {
   const windowSize = useRef([window.innerWidth]);
@@ -25,9 +26,21 @@ export default function Hero() {
           </button>
         </div>
 
-        <button className="hero_scroll" type="button">
-          <SlMouse size={windowSize.current[0] < 768 ? 40 : 60} color="white" />
-        </button>
+        <Link
+          to={"about"}
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          offset={-1}
+          duration={500}
+        >
+          <button className="hero_scroll" type="button">
+            <SlMouse
+              size={windowSize.current[0] < 768 ? 40 : 60}
+              color="white"
+            />
+          </button>
+        </Link>
       </div>
     </>
   );

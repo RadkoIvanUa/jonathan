@@ -13,8 +13,8 @@
 .header.stickyadd .header_nav__link {
   background-image: linear-gradient(
     to right,
-    #04b4e0,
-    #04b4e0 50%,
+    var(--primary-brand-color),
+    var(--primary-brand-color) 50%,
     #000000 50%
   );
 }
@@ -28,6 +28,7 @@
 .header_nav__logo {
   font-size: 30px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .header_nav__list {
@@ -56,6 +57,8 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
+
+  cursor: pointer;
 }
 
 .header_nav__link:before {
