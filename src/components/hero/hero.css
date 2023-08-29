@@ -51,7 +51,6 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-bottom: 30px;
 }
 
 .hero_btn:hover {
@@ -151,7 +150,6 @@
     width: 150px;
     height: 50px;
     font-size: 20px;
-    margin-bottom: 100px;
   }
 
   .hero_scroll {
@@ -163,7 +161,4 @@
 }
 
 @media (min-width: 1200px) {
-  .hero_btn {
-    margin-bottom: 150px;
-  }
 }
