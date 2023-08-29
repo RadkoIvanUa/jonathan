@@ -1,16 +1,12 @@
 import "./about.css";
+import aboutImg from "../../../public/img/about/about_photo.jpg";
 
 export default function About() {
   return (
     <section className="section about" id="about">
       <div className="container">
         <div className="about_img__thumb">
-          <img
-            src="../../../public/img/hero/about/about_photo.jpg"
-            alt=""
-            className="about_img"
-            width={520}
-          />
+          <img src={aboutImg} alt="" className="about_img" width={520} />
         </div>
         <h2 className="about_title">title</h2>
         <h3 className="about_subtitle">subtitle</h3>
