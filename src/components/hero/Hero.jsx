@@ -13,7 +13,7 @@ export default function Hero() {
           <p className="hero_text">Welcome</p>
           <h1 className="hero_title">I`m a Graphic designer</h1>
           <p className="hero_subtitle">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit, nostrum!
+            Loremus ipsum dolor sit amet consectetur adipisicing elit, nostrum!
           </p>
           <button className="hero_btn">
             <a
