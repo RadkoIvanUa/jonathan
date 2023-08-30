@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useSpring, animated } from "react-spring";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { VscChromeClose } from "react-icons/vsc";
+import { isMobile } from "react-device-detect";
 
 import "./header.css";
 import { Link } from "react-scroll";
@@ -25,7 +26,7 @@ export default function Header({ className }) {
         <nav className="header__nav">
           <Link
             className="header__nav-logo"
-            to={"home"}
+            to={"hero"}
             activeClass="active"
             spy={true}
             smooth={true}
@@ -37,11 +38,11 @@ export default function Header({ className }) {
             <li className="header__nav-item">
               <Link
                 className="header__nav-link"
-                to={"home"}
+                to={"hero"}
                 activeClass="active"
                 spy={true}
                 smooth={true}
-                offset={0}
+                offset={-100}
                 duration={500}
               >
                 Home
@@ -53,6 +54,7 @@ export default function Header({ className }) {
                 to={"about"}
                 activeClass="active"
                 spy={true}
+                offset={isMobile ? -7 : -10}
                 smooth={true}
                 duration={500}
               >
@@ -111,9 +113,7 @@ export default function Header({ className }) {
             <li className="mobile__header-nav-item">
               <Link
                 className="mobile__header-nav-link"
-                to={"home"}
-                activeClass="active"
-                spy={true}
+                to={"hero"}
                 smooth={true}
                 duration={500}
                 onClick={() => {
@@ -126,7 +126,7 @@ export default function Header({ className }) {
             <li className="mobile__header-nav-item">
               <Link
                 className="mobile__header-nav-link"
-                to="about"
+                to="section about"
                 activeClass="active"
                 spy={true}
                 smooth={true}
