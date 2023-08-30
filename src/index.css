@@ -35,6 +35,9 @@
   /* clean */
   --clean-color: #ffffff;
 }
+body {
+  height: 500vh;
+}
 
 a {
   text-decoration: none;
@@ -47,22 +50,28 @@ img {
   height: auto;
 }
 
-body {
-  height: 200vh;
-}
-
 .container {
   padding-left: 16px;
   padding-right: 16px;
   margin: 0 auto;
 }
 .section {
-  padding: 100px 0 100px 0;
+  padding: 50px 0 50px 0;
+}
+
+.header__nav-item > .active {
+  background-position: 0;
+}
+.mobile__header-nav-item > .active {
+  color: var(--primary-brand-color);
 }
 
 @media (min-width: 768px) {
   .container {
     width: 768px;
+  }
+  .section {
+    padding: 100px 0 100px 0;
   }
 }
 

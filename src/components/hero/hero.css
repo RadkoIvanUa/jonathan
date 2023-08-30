@@ -5,7 +5,7 @@
       rgba(38, 40, 43, 0.72),
       rgba(38, 40, 43, 0.72)
     ),
-    url(../../../public/img/hero/hero_mobile.jpg);
+    url(../../img/hero/hero_mobile.jpg);
   background-position: center;
   background-size: cover;
   padding: 100px 0;
@@ -18,23 +18,23 @@
   position: relative;
 }
 
-.hero_text {
+.hero__text {
   font-size: 25px;
   margin-bottom: 10px;
 }
 
-.hero_title {
+.hero__title {
   font-size: 40px;
   font-weight: 500;
   margin-bottom: 10px;
 }
 
-.hero_subtitle {
+.hero__subtitle {
   line-height: 150%;
   margin-bottom: 10px;
 }
 
-.hero_btn {
+.hero__btn {
   all: unset;
   width: 100px;
   height: 30px;
@@ -54,12 +54,12 @@
   touch-action: manipulation;
 }
 
-.hero_btn:hover {
+.hero__btn:hover {
   color: var(--primary-brand-color);
 }
 
-.hero_btn::after,
-.hero_btn::before {
+.hero__btn::after,
+.hero__btn::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -68,7 +68,7 @@
   transition: all 0.4s;
 }
 
-.hero_btn::before {
+.hero__btn::before {
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
@@ -76,7 +76,7 @@
   border-radius: 10px;
 }
 
-.hero_btn::after {
+.hero__btn::after {
   transform: translate(10px, 10px);
   width: 35px;
   height: 35px;
@@ -86,26 +86,26 @@
   border-radius: 50px;
 }
 
-.hero_btn:hover::before {
+.hero__btn:hover::before {
   transform: translate(5%, 20%);
   width: 110%;
   height: 110%;
 }
 
-.hero_btn:hover::after {
+.hero__btn:hover::after {
   border-radius: 10px;
   transform: translate(0, 0);
   width: 100%;
   height: 100%;
 }
 
-.hero_btn:active::after {
+.hero__btn:active::after {
   transition: 0s;
   transform: translate(0, 5%);
 }
 
-.hero_scroll {
-  display: block;
+.hero__scroll {
+  display: none;
   border: none;
   background-color: transparent;
   margin: 0 auto;
@@ -117,7 +117,7 @@
         rgba(38, 40, 43, 0.72),
         rgba(38, 40, 43, 0.72)
       ),
-      url(../../../public/img/hero/hero.jpg);
+      url(../../img/hero/hero.jpg);
     height: 100vh;
 
     padding: 0;
@@ -130,31 +130,32 @@
     transform: translate(-50%, -50%);
   }
 
-  .hero_text {
+  .hero__text {
     font-size: 50px;
     margin-bottom: 20px;
   }
 
-  .hero_title {
+  .hero__title {
     font-size: 70px;
     font-weight: 500;
     margin-bottom: 30px;
   }
 
-  .hero_subtitle {
+  .hero__subtitle {
     font-size: 25px;
     line-height: 150%;
     margin-bottom: 30px;
   }
 
-  .hero_btn {
+  .hero__btn {
     width: 150px;
     height: 50px;
     font-size: 20px;
     margin-bottom: 0;
   }
 
-  .hero_scroll {
+  .hero__scroll {
+    display: block;
     position: absolute;
     bottom: 20px;
     left: 50%;

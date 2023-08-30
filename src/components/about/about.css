@@ -1,10 +1,46 @@
 h1 {
   font-size: 100px;
 }
-
-.header_nav__item > .active {
-  background-position: 0;
+.about__img-wrapper {
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  margin-bottom: 30px;
 }
-.mobile_header_nav__item > .active {
+
+.about__img {
+  display: block;
+  border-radius: 5px;
+}
+
+.about__title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.about__title > span {
+  font-weight: 600;
+}
+.about__subtitle {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.about__subtitle > span {
   color: var(--primary-brand-color);
+}
+.about__text {
+  line-height: 1.8;
+}
+
+.about__icons-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about__icons-wrapper > a {
+  border-radius: 50%;
+  border: 1px solid;
+  padding: 10px;
+  display: flex;
 }

@@ -22,9 +22,9 @@ export default function Header({ className }) {
   return (
     <div className={className}>
       <div className="container">
-        <nav className="header_nav">
+        <nav className="header__nav">
           <Link
-            className="header_nav__logo"
+            className="header__nav-logo"
             to={"home"}
             activeClass="active"
             spy={true}
@@ -34,10 +34,10 @@ export default function Header({ className }) {
           >
             JONATHAN
           </Link>
-          <ul className="header_nav__list">
-            <li className="header_nav__item">
+          <ul className="header__nav-list">
+            <li className="header__nav-item">
               <Link
-                className="header_nav__link"
+                className="header__nav-link"
                 to={"home"}
                 activeClass="active"
                 spy={true}
@@ -48,36 +48,36 @@ export default function Header({ className }) {
                 Home
               </Link>
             </li>
-            <li className="header_nav__item">
+            <li className="header__nav-item">
               <Link
-                className="header_nav__link"
+                className="header__nav-link"
                 to={"about"}
                 activeClass="active"
                 spy={true}
                 smooth={true}
-                offset={-2}
+                offset={-1}
                 duration={500}
               >
                 About
               </Link>
             </li>
             <li>
-              <a href="" className="header_nav__link">
+              <a href="" className="header__nav-link">
                 Services
               </a>
             </li>
             <li>
-              <a href="" className="header_nav__link">
+              <a href="" className="header__nav-link">
                 Portfolio
               </a>
             </li>
             <li>
-              <a href="" className="header_nav__link">
+              <a href="" className="header__nav-link">
                 Blog
               </a>
             </li>
             <li>
-              <a href="" className="header_nav__link">
+              <a href="" className="header__nav-link">
                 Contact
               </a>
             </li>
@@ -105,14 +105,14 @@ export default function Header({ className }) {
 
       <nav
         className={
-          isMenuOpen ? "mobile_header_nav" : "mobile_header_nav ishidden"
+          isMenuOpen ? "mobile__header-nav" : "mobile__header-nav ishidden"
         }
       >
         <div className="container">
-          <ul className="mobile_header_nav__list">
-            <li className="mobile_header_nav__item">
+          <ul className="mobile__header-nav-list">
+            <li className="mobile__header-nav-item">
               <Link
-                className="mobile_header_nav__link"
+                className="mobile__header-nav-link"
                 to={"home"}
                 activeClass="active"
                 spy={true}
@@ -126,14 +126,14 @@ export default function Header({ className }) {
                 Home
               </Link>
             </li>
-            <li className="mobile_header_nav__item">
+            <li className="mobile__header-nav-item">
               <Link
-                className="mobile_header_nav__link"
-                to={"about"}
+                className="mobile__header-nav-link"
+                to="about"
                 activeClass="active"
                 spy={true}
                 smooth={true}
-                offset={0}
+                offset={-50}
                 duration={500}
                 onClick={() => {
                   setIsMenuOpen(false);
@@ -142,23 +142,23 @@ export default function Header({ className }) {
                 About
               </Link>
             </li>
-            <li className="mobile_header_nav__item">
-              <a href="" className="mobile_header_nav__link">
+            <li className="mobile__header-nav-item">
+              <a href="" className="mobile__header-nav-link">
                 Services
               </a>
             </li>
-            <li className="mobile_header_nav__item">
-              <a href="" className="mobile_header_nav__link">
+            <li className="mobile__header-nav-item">
+              <a href="" className="mobile__header-nav-link">
                 Portfolio
               </a>
             </li>
-            <li className="mobile_header_nav__item">
-              <a href="" className="mobile_header_nav__link">
+            <li className="mobile__header-nav-item">
+              <a href="" className="mobile__header-nav-link">
                 Blog
               </a>
             </li>
-            <li className="mobile_header_nav__item">
-              <a href="" className="mobile_header_nav__link">
+            <li className="mobile__header-nav-item">
+              <a href="" className="mobile__header-nav-link">
                 Contact
               </a>
             </li>

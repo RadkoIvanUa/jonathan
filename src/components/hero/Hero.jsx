@@ -11,14 +11,14 @@ export default function Hero() {
     <>
       <div className="hero">
         <div className="container">
-          <p className="hero_text">Welcome</p>
-          <h1 className="hero_title">I`m a Graphic designer</h1>
-          <p className="hero_subtitle">
+          <p className="hero__text">Welcome</p>
+          <h1 className="hero__title">I`m a Graphic designer</h1>
+          <p className="hero__subtitle">
             Loremus ipsum dolor sit amet consectetur adipisicing elit, nostrum!
           </p>
-          <button className="hero_btn">
+          <button className="hero__btn">
             <a
-              href="public\download_sample\download_sample.txt"
+              href="public\download__sample\download_sample.txt"
               download={true}
             >
               Download CV
@@ -34,7 +34,7 @@ export default function Hero() {
           offset={-1}
           duration={500}
         >
-          <button className="hero_scroll" type="button">
+          <button className="hero__scroll" type="button">
             <SlMouse
               size={windowSize.current[0] < 768 ? 40 : 60}
               color="white"
