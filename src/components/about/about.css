@@ -2,7 +2,7 @@ h1 {
   font-size: 100px;
 }
 .about__img-wrapper {
-  padding: 5px;
+  padding: 3px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -31,16 +31,54 @@ h1 {
 }
 .about__text {
   line-height: 1.8;
+  margin-bottom: 20px;
 }
 
 .about__icons-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
 }
 
 .about__icons-wrapper > a {
   border-radius: 50%;
-  border: 1px solid;
+  border: 2px solid #d4d4d4;
   padding: 10px;
   display: flex;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about__icons-wrapper > a:hover {
+  color: var(--primary-brand-color);
+}
+
+@media (min-width: 768px) {
+  .about__img {
+    width: 100%;
+  }
+  .about__icons-wrapper {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about__img-wrapper {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .about__text {
+    flex: 0 0 auto;
+  }
+
+  .about__icons-wrapper {
+    justify-content: center;
+  }
 }

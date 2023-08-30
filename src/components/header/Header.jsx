@@ -29,7 +29,6 @@ export default function Header({ className }) {
             activeClass="active"
             spy={true}
             smooth={true}
-            offset={-1}
             duration={500}
           >
             JONATHAN
@@ -42,7 +41,7 @@ export default function Header({ className }) {
                 activeClass="active"
                 spy={true}
                 smooth={true}
-                offset={-1}
+                offset={0}
                 duration={500}
               >
                 Home
@@ -55,7 +54,6 @@ export default function Header({ className }) {
                 activeClass="active"
                 spy={true}
                 smooth={true}
-                offset={-1}
                 duration={500}
               >
                 About
@@ -117,7 +115,6 @@ export default function Header({ className }) {
                 activeClass="active"
                 spy={true}
                 smooth={true}
-                offset={-1}
                 duration={500}
                 onClick={() => {
                   setIsMenuOpen(false);
@@ -133,7 +130,7 @@ export default function Header({ className }) {
                 activeClass="active"
                 spy={true}
                 smooth={true}
-                offset={-50}
+                offset={-40}
                 duration={500}
                 onClick={() => {
                   setIsMenuOpen(false);
