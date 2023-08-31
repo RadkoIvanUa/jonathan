@@ -10,7 +10,7 @@ export default function Portfolio() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = (e) => {
-    const largeImageURL = e.target.src;
+    const largeImageURL = e.target.dataset.src;
 
     console.log(largeImageURL);
 
@@ -65,7 +65,7 @@ export default function Portfolio() {
               {imgArr.map((item, index) => (
                 <li key={index} className="image" data-name={item.category}>
                   <span>
-                    <img src={item.link} alt="" />
+                    <img src={item.link} data-src={item.link} alt="" />
                   </span>
                 </li>
               ))}
