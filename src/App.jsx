@@ -5,6 +5,8 @@ import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import { useEffect, useState, useRef } from "react";
 import About from "./components/about/About";
+import Services from "./components/services/Services";
+import Portfolio from "./components/portfolio/Portfolio";
 
 function App() {
   const [scroll, setScroll] = useState(false);
@@ -33,6 +35,8 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Services />
+        <Portfolio />
       </main>
       <footer></footer>
     </div>

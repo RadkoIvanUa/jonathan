@@ -29,8 +29,6 @@ export default function Header({ className }) {
             to={"hero"}
             activeClass="active"
             spy={true}
-            smooth={true}
-            duration={500}
           >
             JONATHAN
           </Link>
@@ -41,9 +39,7 @@ export default function Header({ className }) {
                 to={"hero"}
                 activeClass="active"
                 spy={true}
-                smooth={true}
                 offset={-100}
-                duration={500}
               >
                 Home
               </Link>
@@ -52,24 +48,34 @@ export default function Header({ className }) {
               <Link
                 className="header__nav-link"
                 to={"about"}
-                activeClass="active"
                 spy={true}
+                activeClass="active"
                 offset={isMobile ? -7 : -10}
-                smooth={true}
-                duration={500}
               >
                 About
               </Link>
             </li>
-            <li>
-              <a href="" className="header__nav-link">
+            <li className="header__nav-item">
+              <Link
+                activeClass="active"
+                className="header__nav-link"
+                to={"services"}
+                spy={true}
+                offset={isMobile ? 0 : -5}
+              >
                 Services
-              </a>
+              </Link>
             </li>
-            <li>
-              <a href="" className="header__nav-link">
+            <li className="header__nav-item">
+              <Link
+                activeClass="active"
+                className="header__nav-link"
+                spy={true}
+                to={"portfolio"}
+                offset={isMobile ? 0 : -5}
+              >
                 Portfolio
-              </a>
+              </Link>
             </li>
             <li>
               <a href="" className="header__nav-link">
@@ -114,8 +120,6 @@ export default function Header({ className }) {
               <Link
                 className="mobile__header-nav-link"
                 to={"hero"}
-                smooth={true}
-                duration={500}
                 onClick={() => {
                   setIsMenuOpen(false);
                 }}
@@ -129,9 +133,7 @@ export default function Header({ className }) {
                 to="section about"
                 activeClass="active"
                 spy={true}
-                smooth={true}
                 offset={-40}
-                duration={500}
                 onClick={() => {
                   setIsMenuOpen(false);
                 }}
@@ -140,14 +142,32 @@ export default function Header({ className }) {
               </Link>
             </li>
             <li className="mobile__header-nav-item">
-              <a href="" className="mobile__header-nav-link">
+              <Link
+                className="mobile__header-nav-link"
+                to="services"
+                activeClass="active"
+                spy={true}
+                offset={-40}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                }}
+              >
                 Services
-              </a>
+              </Link>
             </li>
             <li className="mobile__header-nav-item">
-              <a href="" className="mobile__header-nav-link">
+              <Link
+                className="mobile__header-nav-link"
+                to="portfolio"
+                activeClass="active"
+                spy={true}
+                offset={-40}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                }}
+              >
                 Portfolio
-              </a>
+              </Link>
             </li>
             <li className="mobile__header-nav-item">
               <a href="" className="mobile__header-nav-link">

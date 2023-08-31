@@ -16,13 +16,13 @@ export default function About() {
           <img className="about__img" src={aboutImg} width={450} />
         </div>
         <div>
-          <h2 className="about__title">
+          <h2 className="about__title section__title">
             <span>About</span> Me
           </h2>
           <h3 className="about__subtitle">
             Hello! <span>I`m Jonathan</span>
           </h3>
-          <div className="about__text">
+          <div className="about__text section__text">
             <p>
               Welcome to my creative world, where imagination takes form and
               visuals weave stories.
