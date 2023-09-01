@@ -28,6 +28,10 @@
   margin-bottom: 10px;
 }
 
+.services__item-icon-svg {
+  color: var(--primary-brand-color);
+}
+
 .servises__item-title {
   font-size: 25px;
   font-weight: 500;

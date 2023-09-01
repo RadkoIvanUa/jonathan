@@ -126,7 +126,7 @@
 @media screen and (min-width: 1200px) {
   .header__nav-link:before {
     content: "";
-    background: #04b4e0;
+    background: var(--primary-brand-color);
     display: block;
     position: absolute;
     bottom: -3px;

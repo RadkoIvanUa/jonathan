@@ -3,22 +3,37 @@ import { useEffect, useState } from "react";
 import galery_filter from "../../helpers/galery_filter";
 
 import workArr from "../../portfolio_img";
-import Modal2 from "../modal/Modal";
+import ModalWindow from "../modal/Modal";
 
 export default function Portfolio() {
   const [largeImageURL, setLargeImageURL] = useState();
+  const [description, setDescription] = useState();
+  const [client, setClient] = useState();
+  const [title, setTitle] = useState();
+  const [category, setCategory] = useState();
+  const [website, setWebsite] = useState();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = (e) => {
     const largeImageURL = e.target.dataset.src;
-
-    console.log(largeImageURL);
+    const itemDescription = e.target.dataset.description;
+    const client = e.target.dataset.client;
+    const title = e.target.dataset.title;
+    const category = e.target.dataset.category;
+    const website = e.target.dataset.website;
 
     if (!largeImageURL) {
       return;
     }
 
     setLargeImageURL(largeImageURL);
+    setDescription(itemDescription);
+    setClient(client);
+    setTitle(title);
+    setCategory(category);
+    setWebsite(website);
+
     setIsModalOpen(true);
   };
 
@@ -68,16 +83,61 @@ export default function Portfolio() {
                     <img
                       src={item.link}
                       data-src={item.link}
+                      data-description={item.description}
+                      data-client={item.client}
+                      data-title={item.title}
+                      data-category={item.category}
+                      data-website={item.website}
                       alt=""
                       width="300px"
                     />
+                    <div
+                      className="overlay"
+                      data-src={item.link}
+                      data-description={item.description}
+                      data-client={item.client}
+                      data-title={item.title}
+                      data-category={item.category}
+                      data-website={item.website}
+                      onClick={handleModalOpen}
+                    >
+                      <p
+                        className="overlay__title"
+                        data-src={item.link}
+                        data-description={item.description}
+                        data-client={item.client}
+                        data-title={item.title}
+                        data-category={item.category}
+                        data-website={item.website}
+                        onClick={handleModalOpen}
+                      >
+                        {item.title}
+                      </p>
+                      <p
+                        className="overlay__category"
+                        data-src={item.link}
+                        data-description={item.description}
+                        data-client={item.client}
+                        data-title={item.title}
+                        data-category={item.category}
+                        data-website={item.website}
+                        onClick={handleModalOpen}
+                      >
+                        {item.category}
+                      </p>
+                    </div>
                   </div>
                 </li>
               ))}
-              <Modal2
+              <ModalWindow
                 largeImageURL={largeImageURL}
                 isModalOpen={isModalOpen}
                 onCloseModal={hendleModalClose}
+                description={description}
+                client={client}
+                title={title}
+                category={category}
+                website={website}
               />
             </ul>
           </div>

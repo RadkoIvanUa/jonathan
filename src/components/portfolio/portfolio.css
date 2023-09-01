@@ -54,7 +54,7 @@ nav .items span {
 
 .gallery .image {
   flex-basis: calc((100% - 10px) / 1);
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 .gallery .image span {
@@ -85,6 +85,7 @@ nav .items span {
   height: 200px;
   border-radius: 5px;
   overflow: hidden;
+  position: relative;
 }
 
 .image__thumb > img {
@@ -110,6 +111,43 @@ nav .items span {
 @media (min-width: 1024px) {
   .gallery .image {
     flex-basis: calc((100% - 20px) / 3);
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: RGBA(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .overlay__title {
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    margin: 0;
+  }
+  .overlay__category {
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .image__thumb:hover > .overlay {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 

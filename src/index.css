@@ -15,7 +15,8 @@
   /*_________COLOR SCHEME________*/
 
   /* iris-color*/
-  --primary-brand-color: #04b4e0;
+  /* --primary-brand-color: #04b4e0; */
+  --primary-brand-color: #4a59ff;
   /* ocean-color */
   --pressed-color: #404bbf;
   /* navy-blue-color */
@@ -81,7 +82,7 @@ img {
 
 .section__text {
   line-height: 1.8;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .header__nav-item .active {

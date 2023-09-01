@@ -21,7 +21,7 @@ export default function Services() {
         <ul className="services__list">
           <li className="services__list-item">
             <div className="services__item-icon">
-              <CgWebsite size={60} color="#04b4e0" />
+              <CgWebsite size={60} className="services__item-icon-svg" />
             </div>
             <h3 className="servises__item-title">Web</h3>
             <p className="services__item-text section__text">
@@ -31,7 +31,7 @@ export default function Services() {
           </li>
           <li className="services__list-item">
             <div className="services__item-icon">
-              <BiLogo500Px size={60} color="#04b4e0" />
+              <BiLogo500Px size={60} className="services__item-icon-svg" />
             </div>
             <h3 className="servises__item-title">Logo</h3>
             <p className="services__item-text section__text">
@@ -41,7 +41,7 @@ export default function Services() {
           </li>
           <li className="services__list-item">
             <div className="services__item-icon">
-              <GoPackage size={60} color="#04b4e0" />
+              <GoPackage size={60} className="services__item-icon-svg" />
             </div>
             <h3 className="servises__item-title">Packaging</h3>
             <p className="services__item-text section__text">
@@ -51,7 +51,7 @@ export default function Services() {
           </li>
           <li className="services__list-item">
             <div className="services__item-icon">
-              <TbSocial size={60} color="#04b4e0" />
+              <TbSocial size={60} className="services__item-icon-svg" />
             </div>
             <h3 className="servises__item-title">Social Media</h3>
             <p className="services__item-text section__text">
@@ -61,7 +61,7 @@ export default function Services() {
           </li>
           <li className="services__list-item">
             <div className="services__item-icon">
-              <FiPrinter size={60} color="#04b4e0" />
+              <FiPrinter size={60} className="services__item-icon-svg" />
             </div>
             <h3 className="servises__item-title">Print Design</h3>
             <p className="services__item-text section__text">
@@ -71,7 +71,7 @@ export default function Services() {
           </li>
           <li className="services__list-item">
             <div className="services__item-icon">
-              <AiOutlinePicture size={60} color="#04b4e0" />
+              <AiOutlinePicture size={60} className="services__item-icon-svg" />
             </div>
             <h3 className="servises__item-title">Illustration</h3>
             <p className="services__item-text section__text">
