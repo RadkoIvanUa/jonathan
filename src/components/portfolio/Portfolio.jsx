@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import galery_filter from "../../helpers/galery_filter";
 
 import workArr from "../../portfolio_img";
-import { Modal } from "../modal/Modal";
+import Modal2 from "../modal/Modal";
 
 export default function Portfolio() {
-  const [largeImageURL, setLargeImageURL] = useState("");
+  const [largeImageURL, setLargeImageURL] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = (e) => {
@@ -69,7 +69,7 @@ export default function Portfolio() {
                   </span>
                 </li>
               ))}
-              <Modal
+              <Modal2
                 largeImageURL={largeImageURL}
                 isModalOpen={isModalOpen}
                 onCloseModal={hendleModalClose}
