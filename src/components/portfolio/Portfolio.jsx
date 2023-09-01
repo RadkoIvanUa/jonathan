@@ -9,6 +9,8 @@ export default function Portfolio() {
   const [largeImageURL, setLargeImageURL] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const [test, setTest] = useState(false);
+
   const handleModalOpen = (e) => {
     const largeImageURL = e.target.dataset.src;
 
@@ -26,13 +28,15 @@ export default function Portfolio() {
 
   useEffect(() => {
     galery_filter();
+    setTest(true);
   }, []);
 
   return (
     <section className="portfolio__section section" id="portfolio">
       <div className="container">
         <h3 className="portfolio__title section__title">
-          <span>Our</span> Works
+          {!test ? <span>Our</span> : <span>TEST</span>}
+          Works
         </h3>
         <div>
           <div className="wrapper">
