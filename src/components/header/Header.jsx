@@ -101,9 +101,9 @@ export default function Header({ className }) {
             className="burger"
           >
             {isMenuOpen ? (
-              <VscChromeClose size={40} />
+              <VscChromeClose size={40} color={"black"} />
             ) : (
-              <RxHamburgerMenu size={40} />
+              <RxHamburgerMenu size={40} color={"black"} />
             )}
           </animated.button>
         </nav>
