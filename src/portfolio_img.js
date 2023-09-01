@@ -6,7 +6,7 @@ const worksArr = [
     category: "web",
   },
   {
-    link: portfolioPhotoPath.testPhoto,
+    link: portfolioPhotoPath.laptop,
     category: "social",
   },
   {

@@ -64,9 +64,14 @@ export default function Portfolio() {
             <ul className="gallery" onClick={handleModalOpen}>
               {workArr.map((item, index) => (
                 <li key={index} className="image" data-name={item.category}>
-                  <span>
-                    <img src={item.link} data-src={item.link} alt="" />
-                  </span>
+                  <div className="image__thumb">
+                    <img
+                      src={item.link}
+                      data-src={item.link}
+                      alt=""
+                      width="300px"
+                    />
+                  </div>
                 </li>
               ))}
               <Modal2

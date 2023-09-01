@@ -78,6 +78,20 @@ nav .items span {
   animation: animate 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.image__thumb {
+  height: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.image__thumb > img {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+}
+
 @media (min-width: 768px) {
   .gallery .image {
     flex-basis: calc((100% - 10px) / 2);
