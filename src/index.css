@@ -16,7 +16,7 @@
 
   /* iris-color*/
   /* --primary-brand-color: #04b4e0; */
-  --primary-brand-color: #4a59ff;
+  --primary-brand-color: #f34105;
   /* ocean-color */
   --pressed-color: #404bbf;
   /* navy-blue-color */
@@ -90,6 +90,33 @@ img {
 }
 .mobile__header-nav-item .active {
   color: var(--primary-brand-color);
+}
+
+.up__scroll {
+  position: fixed;
+  z-index: 9000;
+  bottom: 20px;
+  right: 20px;
+
+  color: var(--primary-brand-color);
+  opacity: 0.5;
+
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.up__scroll-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.up__scroll-icon:hover {
+  transform: scale(1.1);
+}
+
+.up__scroll.hidden {
+  transform: translateX(100px);
+}
+
+.up__scroll.show {
+  transform: translateX(0);
 }
 
 @media (min-width: 768px) {

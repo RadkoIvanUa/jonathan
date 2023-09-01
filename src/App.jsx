@@ -7,17 +7,24 @@ import { useEffect, useState, useRef } from "react";
 import About from "./components/about/About";
 import Services from "./components/services/Services";
 import Portfolio from "./components/portfolio/Portfolio";
+import { TbSquareRoundedArrowUpFilled } from "react-icons/tb";
 
 function App() {
   const [scroll, setScroll] = useState(false);
+  const [upScroll, setUpScroll] = useState(false);
+
   const windowSize = useRef([window.innerWidth]);
 
   const handleScroll = () => {
     setScroll(window.scrollY > 50);
   };
+  const handleUpScroll = () => {
+    setUpScroll(window.scrollY > 400);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleUpScroll);
   }, []);
 
   useEffect(() => {
@@ -39,6 +46,11 @@ function App() {
         <Portfolio />
       </main>
       <footer></footer>
+      <div className={upScroll ? "up__scroll show" : "up__scroll hidden"}>
+        <a href="#home">
+          <TbSquareRoundedArrowUpFilled size={50} className="up__scroll-icon" />
+        </a>
+      </div>
     </div>
   );
 }

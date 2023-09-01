@@ -78,21 +78,34 @@ export default function Portfolio() {
             </nav>
             <ul className="gallery" onClick={handleModalOpen}>
               {workArr.map((item, index) => (
-                <li key={index} className="image" data-name={item.category}>
-                  <div className="image__thumb">
-                    <img
-                      src={item.link}
-                      data-src={item.link}
-                      data-description={item.description}
-                      data-client={item.client}
-                      data-title={item.title}
-                      data-category={item.category}
-                      data-website={item.website}
-                      alt=""
-                      width="300px"
-                    />
-                    <div
-                      className="overlay"
+                <li
+                  key={index}
+                  className="image image__thumb"
+                  data-name={item.category}
+                >
+                  <img
+                    src={item.link}
+                    data-src={item.link}
+                    data-description={item.description}
+                    data-client={item.client}
+                    data-title={item.title}
+                    data-category={item.category}
+                    data-website={item.website}
+                    alt=""
+                    width="300px"
+                  />
+                  <div
+                    className="overlay"
+                    data-src={item.link}
+                    data-description={item.description}
+                    data-client={item.client}
+                    data-title={item.title}
+                    data-category={item.category}
+                    data-website={item.website}
+                    onClick={handleModalOpen}
+                  >
+                    <p
+                      className="overlay__title"
                       data-src={item.link}
                       data-description={item.description}
                       data-client={item.client}
@@ -101,31 +114,20 @@ export default function Portfolio() {
                       data-website={item.website}
                       onClick={handleModalOpen}
                     >
-                      <p
-                        className="overlay__title"
-                        data-src={item.link}
-                        data-description={item.description}
-                        data-client={item.client}
-                        data-title={item.title}
-                        data-category={item.category}
-                        data-website={item.website}
-                        onClick={handleModalOpen}
-                      >
-                        {item.title}
-                      </p>
-                      <p
-                        className="overlay__category"
-                        data-src={item.link}
-                        data-description={item.description}
-                        data-client={item.client}
-                        data-title={item.title}
-                        data-category={item.category}
-                        data-website={item.website}
-                        onClick={handleModalOpen}
-                      >
-                        {item.category}
-                      </p>
-                    </div>
+                      {item.title}
+                    </p>
+                    <p
+                      className="overlay__category"
+                      data-src={item.link}
+                      data-description={item.description}
+                      data-client={item.client}
+                      data-title={item.title}
+                      data-category={item.category}
+                      data-website={item.website}
+                      onClick={handleModalOpen}
+                    >
+                      {item.category}
+                    </p>
                   </div>
                 </li>
               ))}

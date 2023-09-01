@@ -22,7 +22,7 @@ const worksArr = [
   },
   {
     link: portfolioPhotoPath.three,
-    category: "social",
+    category: "illustration",
     title: "My Awesome Project",
     description:
       "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
@@ -40,7 +40,7 @@ const worksArr = [
   },
   {
     link: portfolioPhotoPath.five,
-    category: "logo",
+    category: "print",
     title: "My Awesome Project",
     description:
       "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
