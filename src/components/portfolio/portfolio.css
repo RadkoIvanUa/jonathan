@@ -27,7 +27,7 @@ nav .items span {
   padding: 7px 15px;
 }
 
-.items span {
+.items button {
   padding: 7px 25px;
   font-size: 18px;
   font-weight: 500;
@@ -35,9 +35,12 @@ nav .items span {
   color: #000;
   border-radius: 20px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  background-color: transparent;
+  border: none;
 }
-.items span.active,
-.items span:hover {
+.items button.active,
+.items button:hover {
   color: #fff;
   background: var(--primary-brand-color);
 }

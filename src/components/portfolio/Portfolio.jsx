@@ -38,27 +38,27 @@ export default function Portfolio() {
           <div className="wrapper">
             <nav>
               <div className="items">
-                <span className="item active" data-name="all">
+                <button className="item active" data-name="all">
                   All
-                </span>
-                <span className="item" data-name="web">
+                </button>
+                <button className="item" data-name="web">
                   Web
-                </span>
-                <span className="item" data-name="logo">
+                </button>
+                <button className="item" data-name="logo">
                   Logo
-                </span>
-                <span className="item" data-name="packaging">
+                </button>
+                <button className="item" data-name="packaging">
                   Packaging
-                </span>
-                <span className="item" data-name="social">
+                </button>
+                <button className="item" data-name="social">
                   Social
-                </span>
-                <span className="item" data-name="print">
+                </button>
+                <button className="item" data-name="print">
                   Print
-                </span>
-                <span className="item" data-name="illustration">
+                </button>
+                <button className="item" data-name="illustration">
                   Illustration
-                </span>
+                </button>
               </div>
             </nav>
             <ul className="gallery" onClick={handleModalOpen}>
