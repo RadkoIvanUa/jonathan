@@ -2,7 +2,7 @@ import "./portfolio.css";
 import { useEffect, useState } from "react";
 import galery_filter from "../../helpers/galery_filter";
 
-import imgArr from "../../assets/portfolio_img.json";
+import workArr from "../../portfolio_img";
 import { Modal } from "../modal/Modal";
 
 export default function Portfolio() {
@@ -62,7 +62,7 @@ export default function Portfolio() {
               </div>
             </nav>
             <ul className="gallery" onClick={handleModalOpen}>
-              {imgArr.map((item, index) => (
+              {workArr.map((item, index) => (
                 <li key={index} className="image" data-name={item.category}>
                   <span>
                     <img src={item.link} data-src={item.link} alt="" />
