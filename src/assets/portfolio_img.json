@@ -1,14 +1,14 @@
 [
   {
-    "link": "./public/portfolio_img/about_photo.jpg",
+    "link": "./src/assets/portfolio_img/about_photo.jpg",
     "category": "web"
   },
   {
-    "link": "./public/portfolio_img/about_photo.jpg",
+    "link": "./src/assets/portfolio_img/about_photo.jpg",
     "category": "social"
   },
   {
-    "link": "./public/portfolio_img/about_photo.jpg",
+    "link": "./src/assets/portfolio_img/about_photo.jpg",
     "category": "social"
   }
 ]
