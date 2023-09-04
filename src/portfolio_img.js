@@ -1,8 +1,6 @@
-import { portfolioPhotoPath } from "./img/portfolio_img_import";
-
 const worksArr = [
   {
-    link: "1.jpg",
+    link: "/1.jpg",
     category: "web",
     title: "My Awesome Project",
     description:
@@ -21,7 +19,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "public/3.jpg",
+    link: "/3.jpg",
     category: "illustration",
     title: "My Awesome Project",
     description:
@@ -30,7 +28,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "public/4.jpg",
+    link: "/4.jpg",
     category: "logo",
     title: "My Awesome Project",
     description:
@@ -39,7 +37,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "public/5.jpg",
+    link: "/5.jpg",
     category: "print",
     title: "My Awesome Project",
     description:
@@ -48,7 +46,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "public/6.jpg",
+    link: "/6.jpg",
     category: "packaging",
     title: "My Awesome Project",
     description:
@@ -57,7 +55,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "public/7.jpg",
+    link: "/7.jpg",
     category: "packaging",
     title: "My Awesome Project",
     description:
@@ -66,7 +64,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "public/8.jpg",
+    link: "/8.jpg",
     category: "print",
     title: "My Awesome Project",
     description:
@@ -75,7 +73,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "public/9.jpg",
+    link: "/9.jpg",
     category: "print",
     title: "My Awesome Project",
     description:
@@ -84,7 +82,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "public/10.jpg",
+    link: "/10.jpg",
     category: "illustration",
     title: "My Awesome Project",
     description:
@@ -93,7 +91,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "public/11.jpg",
+    link: "/11.jpg",
     category: "illustration",
     title: "My Awesome Project",
     description:
@@ -102,7 +100,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "public/12.jpg",
+    link: "/12.jpg",
     category: "web",
     title: "My Awesome Project",
     description:
