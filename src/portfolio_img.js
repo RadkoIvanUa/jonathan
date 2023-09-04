@@ -2,7 +2,7 @@ import { portfolioPhotoPath } from "./img/portfolio_img_import";
 
 const worksArr = [
   {
-    link: "src/img/portfolio_img/1.jpg",
+    link: "1.jpg",
     category: "web",
     title: "My Awesome Project",
     description:
@@ -12,7 +12,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "src/img/portfolio_img/2.jpg",
+    link: "/2.jpg",
     category: "social",
     title: "My Awesome Project",
     description:
@@ -21,7 +21,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "src/img/portfolio_img/3.jpg",
+    link: "public/3.jpg",
     category: "illustration",
     title: "My Awesome Project",
     description:
@@ -30,7 +30,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "src/img/portfolio_img/4.jpg",
+    link: "public/4.jpg",
     category: "logo",
     title: "My Awesome Project",
     description:
@@ -39,7 +39,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "src/img/portfolio_img/5.jpg",
+    link: "public/5.jpg",
     category: "print",
     title: "My Awesome Project",
     description:
@@ -48,7 +48,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "src/img/portfolio_img/6.jpg",
+    link: "public/6.jpg",
     category: "packaging",
     title: "My Awesome Project",
     description:
@@ -57,7 +57,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "src/img/portfolio_img/7.jpg",
+    link: "public/7.jpg",
     category: "packaging",
     title: "My Awesome Project",
     description:
@@ -66,7 +66,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "src/img/portfolio_img/8.jpg",
+    link: "public/8.jpg",
     category: "print",
     title: "My Awesome Project",
     description:
@@ -75,7 +75,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "src/img/portfolio_img/9.jpg",
+    link: "public/9.jpg",
     category: "print",
     title: "My Awesome Project",
     description:
@@ -84,7 +84,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "src/img/portfolio_img/10.jpg",
+    link: "public/10.jpg",
     category: "illustration",
     title: "My Awesome Project",
     description:
@@ -93,7 +93,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "src/img/portfolio_img/11.jpg",
+    link: "public/11.jpg",
     category: "illustration",
     title: "My Awesome Project",
     description:
@@ -102,7 +102,7 @@ const worksArr = [
     website: "https://www.envato.com/",
   },
   {
-    link: "src/img/portfolio_img/12.jpg",
+    link: "public/12.jpg",
     category: "web",
     title: "My Awesome Project",
     description:

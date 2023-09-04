@@ -11,5 +11,5 @@ export default defineConfig({
     global: {},
   },
 
-  assetsInclude: /\.(jpg|jpeg|png|svg|gif)$/,
+  assetsInclude: [/\.(jpg|jpeg|png|svg|gif)$/],
 });
