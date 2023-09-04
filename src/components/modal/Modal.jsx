@@ -9,6 +9,7 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
+
 import { useEffect, useRef, useState } from "react";
 
 export default function ModalWindow({
@@ -27,7 +28,9 @@ export default function ModalWindow({
   const windowSize = useRef([window.innerWidth]);
 
   useEffect(() => {
-    if (windowSize.current[0] < 420) {
+    if (windowSize.current[0] < 320) {
+      setModalWidth(250);
+    } else if (windowSize.current[0] < 420) {
       setModalWidth(300);
     } else if (windowSize.current[0] > 500 && windowSize.current[0] < 768) {
       setModalWidth(450);
@@ -56,13 +59,14 @@ export default function ModalWindow({
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: modalWidth,
-    maxHeight: "90%",
+    height: "80%",
     border: "none",
     bgcolor: "background.paper",
-    borderRadius: 5,
+    borderRadius: 2,
     boxShadow: 24,
     outline: "none",
-    overflow: "hidden",
+    overflowY: "auto",
+    overflowX: "hidden",
   };
 
   return (
@@ -83,12 +87,12 @@ export default function ModalWindow({
         style={{ zIndex: 11000 }}
       >
         <Fade in={open}>
-          <Box sx={style}>
+          <Box sx={style} className="modal">
             <div className="modal__img-thumb">
               <img src={largeImageURL} alt="" width="800px" />
             </div>
 
-            <div className="modal__bottom-content">
+            <Box className="modal__bottom-content">
               <h4 className="modal__category">{category}</h4>
               <h3 className="modal__title">{title}</h3>
 
@@ -104,21 +108,18 @@ export default function ModalWindow({
                 </div>
               </div>
               <p className="modal__description section__text">{description}</p>
-            </div>
-
-            <IoIosCloseCircleOutline
-              size={30}
-              style={{
-                position: "absolute",
-                top: 5,
-                right: 5,
-              }}
-              className="modal__close"
-              onClick={handleClose}
-            />
+            </Box>
           </Box>
         </Fade>
       </Modal>
+
+      {open ? (
+        <IoIosCloseCircleOutline
+          size={40}
+          className="modal__close"
+          onClick={handleClose}
+        />
+      ) : null}
     </div>
   );
 }

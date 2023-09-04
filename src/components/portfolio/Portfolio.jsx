@@ -13,6 +13,8 @@ export default function Portfolio() {
   const [category, setCategory] = useState();
   const [website, setWebsite] = useState();
 
+  // const [filteredPortfolio, setFilteredPortfolio] = useState(workArr);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = (e) => {
@@ -42,6 +44,30 @@ export default function Portfolio() {
   useEffect(() => {
     galery_filter();
   }, []);
+
+  // const handleCategory = (e) => {
+  //   if (e.target.nodeName !== "BUTTON") {
+  //     return;
+  //   }
+  //   const filteredPortfolio = workArr.filter(
+  //     (item) => item.category === e.target.dataset.name
+  //   );
+
+  //   setFilteredPortfolio(filteredPortfolio);
+  //   if (e.target.dataset.name === "all") {
+  //     setFilteredPortfolio(workArr);
+  //   }
+
+  //   const currentActiveBtn = document.querySelector(".active__filter");
+
+  //   console.log(currentActiveBtn);
+
+  //   if (currentActiveBtn) {
+  //     currentActiveBtn.classList.remove("active__filter");
+  //   }
+
+  //   e.target.classList.add("active__filter");
+  // };
 
   return (
     <section className="portfolio__section section" id="portfolio">
@@ -102,7 +128,6 @@ export default function Portfolio() {
                     data-title={item.title}
                     data-category={item.category}
                     data-website={item.website}
-                    onClick={handleModalOpen}
                   >
                     <p
                       className="overlay__title"
@@ -112,7 +137,6 @@ export default function Portfolio() {
                       data-title={item.title}
                       data-category={item.category}
                       data-website={item.website}
-                      onClick={handleModalOpen}
                     >
                       {item.title}
                     </p>
@@ -124,7 +148,6 @@ export default function Portfolio() {
                       data-title={item.title}
                       data-category={item.category}
                       data-website={item.website}
-                      onClick={handleModalOpen}
                     >
                       {item.category}
                     </p>
