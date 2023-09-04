@@ -2,7 +2,7 @@ import "./portfolio.css";
 import { useEffect, useState } from "react";
 import galery_filter from "../../helpers/galery_filter";
 
-import workArr from "../../portfolio_img";
+import portfolioItems from "../../portfolio_items";
 import ModalWindow from "../modal/Modal";
 
 export default function Portfolio() {
@@ -12,8 +12,6 @@ export default function Portfolio() {
   const [title, setTitle] = useState();
   const [category, setCategory] = useState();
   const [website, setWebsite] = useState();
-
-  // const [filteredPortfolio, setFilteredPortfolio] = useState(workArr);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -44,30 +42,6 @@ export default function Portfolio() {
   useEffect(() => {
     galery_filter();
   }, []);
-
-  // const handleCategory = (e) => {
-  //   if (e.target.nodeName !== "BUTTON") {
-  //     return;
-  //   }
-  //   const filteredPortfolio = workArr.filter(
-  //     (item) => item.category === e.target.dataset.name
-  //   );
-
-  //   setFilteredPortfolio(filteredPortfolio);
-  //   if (e.target.dataset.name === "all") {
-  //     setFilteredPortfolio(workArr);
-  //   }
-
-  //   const currentActiveBtn = document.querySelector(".active__filter");
-
-  //   console.log(currentActiveBtn);
-
-  //   if (currentActiveBtn) {
-  //     currentActiveBtn.classList.remove("active__filter");
-  //   }
-
-  //   e.target.classList.add("active__filter");
-  // };
 
   return (
     <section className="portfolio__section section" id="portfolio">
@@ -103,7 +77,7 @@ export default function Portfolio() {
               </div>
             </nav>
             <ul className="gallery" onClick={handleModalOpen}>
-              {workArr.map((item, index) => (
+              {portfolioItems.map((item, index) => (
                 <li
                   key={index}
                   className="image image__thumb"

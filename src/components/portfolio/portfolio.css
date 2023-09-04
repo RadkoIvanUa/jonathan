@@ -69,9 +69,6 @@ nav .items span {
   vertical-align: middle;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.gallery .image:hover img {
-  transform: scale(1.1);
-}
 
 .gallery .image.hide {
   display: none;
@@ -148,6 +145,10 @@ nav .items span {
   .image__thumb:hover > .overlay {
     transform: translateY(0);
     opacity: 1;
+  }
+
+  .image__thumb:hover > img {
+    transform: scale(1.1);
   }
 }
 
