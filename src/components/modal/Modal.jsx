@@ -25,21 +25,28 @@ export default function ModalWindow({
   const [open, setOpen] = useState(false);
   const [modalWidth, setModalWidth] = useState();
 
-  const windowSize = useRef([window.innerWidth]);
+  const windowSizeArr = useRef([window.innerWidth]);
+
+  const windowSize = windowSizeArr.current[0];
 
   useEffect(() => {
-    if (windowSize.current[0] < 320) {
+    console.log(windowSize);
+    if (windowSize === 280 && windowSize < 320) {
       setModalWidth(250);
-    } else if (windowSize.current[0] < 420) {
+    } else if (windowSize === 320 && windowSize < 400) {
+      setModalWidth(280);
+    } else if (windowSize === 400 || windowSize < 500) {
       setModalWidth(300);
-    } else if (windowSize.current[0] > 500 && windowSize.current[0] < 768) {
+    } else if (windowSize === 500 || windowSize < 768) {
       setModalWidth(450);
-    } else if (windowSize.current[0] > 768) {
-      setModalWidth(700);
-    } else if (windowSize.current[0] > 1024) {
-      setModalWidth(900);
+    } else if (windowSize === 768 || windowSize < 1024) {
+      setModalWidth(600);
+    } else if (windowSize === 1024 || windowSize < 1280) {
+      setModalWidth(800);
+    } else if (windowSize === 1280 || windowSize < 1920) {
+      setModalWidth(1000);
     }
-  }, []);
+  }, [windowSize]);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -59,7 +66,7 @@ export default function ModalWindow({
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: modalWidth,
-    height: "80%",
+    maxHeight: "80%",
     border: "none",
     bgcolor: "background.paper",
     borderRadius: 2,
