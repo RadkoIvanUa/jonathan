@@ -43,7 +43,7 @@ export default function ModalWindow({
       setModalWidth(600);
     } else if (windowSize === 1024 || windowSize < 1280) {
       setModalWidth(800);
-    } else if (windowSize === 1280 || windowSize < 1920) {
+    } else if (windowSize >= 1280) {
       setModalWidth(1000);
     }
   }, [windowSize]);

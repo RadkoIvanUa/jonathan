@@ -147,9 +147,9 @@ nav .items span {
     opacity: 1;
   }
 
-  .image__thumb:hover > img {
+  /* .image__thumb:hover > img {
     transform: scale(1.1);
-  }
+  } */
 }
 
 @keyframes animate {
