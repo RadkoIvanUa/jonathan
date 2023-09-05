@@ -83,6 +83,8 @@ nav .items span {
   border-radius: 5px;
   overflow: hidden;
   position: relative;
+
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .image__thumb > img {
@@ -142,12 +144,11 @@ nav .items span {
     margin: 0;
   }
 
-  .image__thumb:hover > .overlay {
-    transform: translateY(0);
+  .image__thumb:hover .overlay {
     opacity: 1;
+    transform: translateX(0);
   }
-
-  /* .image__thumb:hover > img {
+  /* .image__thumb:hover img {
     transform: scale(1.1);
   } */
 }

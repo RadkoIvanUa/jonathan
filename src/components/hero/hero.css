@@ -163,7 +163,13 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+  .hero__scroll {
+    bottom: 90px;
+    cursor: pointer;
+  }
+}
+@media (min-width: 1280px) {
   .hero__scroll {
     bottom: 10px;
     cursor: pointer;
