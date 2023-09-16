@@ -80,31 +80,28 @@ export default function Portfolio() {
               {portfolioItems.map((item, index) => (
                 <li
                   key={index}
-                  className="image image__thumb"
+                  className="image__thumb image"
                   data-name={item.category}
                 >
-                  <img
-                    src={item.link}
-                    data-src={item.link}
-                    data-description={item.description}
-                    data-client={item.client}
-                    data-title={item.title}
-                    data-category={item.category}
-                    data-website={item.website}
-                    alt=""
-                    width="300px"
-                  />
-                  <div
-                    className="overlay"
-                    data-src={item.link}
-                    data-description={item.description}
-                    data-client={item.client}
-                    data-title={item.title}
-                    data-category={item.category}
-                    data-website={item.website}
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                    }}
                   >
-                    <p
-                      className="overlay__title"
+                    <img
+                      src={item.link}
+                      data-src={item.link}
+                      data-description={item.description}
+                      data-client={item.client}
+                      data-title={item.title}
+                      data-category={item.category}
+                      data-website={item.website}
+                      alt=""
+                      width="300px"
+                    />
+                    <div
+                      className="overlay"
                       data-src={item.link}
                       data-description={item.description}
                       data-client={item.client}
@@ -112,20 +109,30 @@ export default function Portfolio() {
                       data-category={item.category}
                       data-website={item.website}
                     >
-                      {item.title}
-                    </p>
-                    <p
-                      className="overlay__category"
-                      data-src={item.link}
-                      data-description={item.description}
-                      data-client={item.client}
-                      data-title={item.title}
-                      data-category={item.category}
-                      data-website={item.website}
-                    >
-                      {item.category}
-                    </p>
-                  </div>
+                      <p
+                        className="overlay__title"
+                        data-src={item.link}
+                        data-description={item.description}
+                        data-client={item.client}
+                        data-title={item.title}
+                        data-category={item.category}
+                        data-website={item.website}
+                      >
+                        {item.title}
+                      </p>
+                      <p
+                        className="overlay__category"
+                        data-src={item.link}
+                        data-description={item.description}
+                        data-client={item.client}
+                        data-title={item.title}
+                        data-category={item.category}
+                        data-website={item.website}
+                      >
+                        {item.category}
+                      </p>
+                    </div>
+                  </a>
                 </li>
               ))}
               <ModalWindow

@@ -144,13 +144,13 @@ nav .items span {
     margin: 0;
   }
 
-  .image__thumb:hover .overlay {
+  .image__thumb a:hover .overlay {
     opacity: 1;
     transform: translateX(0);
   }
-  /* .image__thumb:hover img {
+  .image__thumb a:hover img {
     transform: scale(1.1);
-  } */
+  }
 }
 
 @keyframes animate {
