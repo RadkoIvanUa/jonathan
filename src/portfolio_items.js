@@ -67,60 +67,60 @@ const portfolioItems = [
     client: "Envato",
     website: "https://www.envato.com/",
   },
-  {
-    link: seven,
-    category: "packaging",
-    title: "My Awesome Project",
-    description:
-      "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
-    client: "Envato",
-    website: "https://www.envato.com/",
-  },
-  {
-    link: eight,
-    category: "print",
-    title: "My Awesome Project",
-    description:
-      "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
-    client: "Envato",
-    website: "https://www.envato.com/",
-  },
-  {
-    link: nine,
-    category: "print",
-    title: "My Awesome Project",
-    description:
-      "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
-    client: "Envato",
-    website: "https://www.envato.com/",
-  },
-  {
-    link: ten,
-    category: "illustration",
-    title: "My Awesome Project",
-    description:
-      "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
-    client: "Envato",
-    website: "https://www.envato.com/",
-  },
-  {
-    link: eleven,
-    category: "illustration",
-    title: "My Awesome Project",
-    description:
-      "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
-    client: "Envato",
-    website: "https://www.envato.com/",
-  },
-  {
-    link: twelve,
-    category: "web",
-    title: "My Awesome Project",
-    description:
-      "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
-    client: "Envato",
-    website: "https://www.envato.com/",
-  },
+  // {
+  //   link: seven,
+  //   category: "packaging",
+  //   title: "My Awesome Project",
+  //   description:
+  //     "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
+  //   client: "Envato",
+  //   website: "https://www.envato.com/",
+  // },
+  // {
+  //   link: eight,
+  //   category: "print",
+  //   title: "My Awesome Project",
+  //   description:
+  //     "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
+  //   client: "Envato",
+  //   website: "https://www.envato.com/",
+  // },
+  // {
+  //   link: nine,
+  //   category: "print",
+  //   title: "My Awesome Project",
+  //   description:
+  //     "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
+  //   client: "Envato",
+  //   website: "https://www.envato.com/",
+  // },
+  // {
+  //   link: ten,
+  //   category: "illustration",
+  //   title: "My Awesome Project",
+  //   description:
+  //     "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
+  //   client: "Envato",
+  //   website: "https://www.envato.com/",
+  // },
+  // {
+  //   link: eleven,
+  //   category: "illustration",
+  //   title: "My Awesome Project",
+  //   description:
+  //     "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
+  //   client: "Envato",
+  //   website: "https://www.envato.com/",
+  // },
+  // {
+  //   link: twelve,
+  //   category: "web",
+  //   title: "My Awesome Project",
+  //   description:
+  //     "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
+  //   client: "Envato",
+  //   website: "https://www.envato.com/",
+  // },
 ];
 
 export default portfolioItems;

@@ -1,0 +1,58 @@
+.client__section {
+  background-color: #f1f1f1;
+}
+.client__slide-top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.client__slide-thumb {
+  width: 100px;
+  height: 100px;
+}
+
+.client__slide-img {
+  display: block;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.client__slide-title {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+.client__slide-subtitle {
+  font-size: 18px;
+  color: #899097;
+}
+
+.quotes__start {
+  margin-right: 5px;
+  color: var(--primary-brand-color);
+}
+
+.quotes__end {
+  margin-left: 5px;
+  color: var(--primary-brand-color);
+}
+
+.client__slide-testimonial {
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.swiper-pagination {
+  bottom: 20px;
+}
+
+.swiper-pagination-bullet {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-brand-color);
+  transform: scale(1.6);
+}

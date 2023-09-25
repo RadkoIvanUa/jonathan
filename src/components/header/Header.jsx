@@ -77,10 +77,16 @@ export default function Header({ className }) {
                 Portfolio
               </Link>
             </li>
-            <li>
-              <a href="" className="header__nav-link">
-                Blog
-              </a>
+            <li className="header__nav-item">
+              <Link
+                activeClass="active"
+                className="header__nav-link"
+                spy={true}
+                to={"client"}
+                offset={0}
+              >
+                Client
+              </Link>
             </li>
             <li>
               <a href="" className="header__nav-link">
@@ -170,9 +176,18 @@ export default function Header({ className }) {
               </Link>
             </li>
             <li className="mobile__header-nav-item">
-              <a href="" className="mobile__header-nav-link">
-                Blog
-              </a>
+              <Link
+                className="mobile__header-nav-link"
+                to="client"
+                activeClass="active"
+                spy={true}
+                offset={-40}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                }}
+              >
+                Client
+              </Link>
             </li>
             <li className="mobile__header-nav-item">
               <a href="" className="mobile__header-nav-link">
