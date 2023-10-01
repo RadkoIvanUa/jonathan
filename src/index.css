@@ -16,7 +16,7 @@
 
   /* iris-color*/
   /* --primary-brand-color: #04b4e0; */
-  --primary-brand-color: #404bbf;
+  --primary-brand-color: #de0000;
   /* ocean-color */
   --pressed-color: #404bbf;
   /* navy-blue-color */
@@ -42,7 +42,7 @@ html {
 }
 
 body {
-  height: 1000vh;
+  overflow-x: hidden;
 }
 
 a {
@@ -96,8 +96,8 @@ img {
 .up__scroll {
   position: fixed;
   z-index: 9000;
-  bottom: 10px;
-  right: 10px;
+  bottom: 15px;
+  right: 15px;
 
   color: var(--primary-brand-color);
   opacity: 0.5;

@@ -96,10 +96,7 @@ export default function Client() {
               It's like a portal to a world of creative thinking and fresh
               ideas. Using it feels like a journey into the unknown, with each
               abstract concept unveiling a new layer of intrigue. The way it
-              seamlessly blends simplicity and depth is mind-boggling. I've used
-              many services in the past, but this one stands out as a true
-              enigma solver. A must-try for anyone seeking a different
-              perspective!
+              seamlessly blends simplicity and depth is mind-boggling.
               <RiDoubleQuotesR size={20} className="quotes__end" />
             </p>
           </SwiperSlide>
@@ -147,9 +144,7 @@ export default function Client() {
               game-changer for my creative projects. It's as if they've
               harnessed the power of imagination and distilled it into a digital
               tool. Navigating through their abstract concepts is like embarking
-              on a fascinating intellectual journey. I've already seen a
-              significant boost in my problem-solving abilities and ideation
-              process.
+              on a fascinating intellectual journey.
               <RiDoubleQuotesR size={20} className="quotes__end" />
             </p>
           </SwiperSlide>

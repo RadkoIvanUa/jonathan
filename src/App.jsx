@@ -1,6 +1,6 @@
-import "./App.css";
 import "../node_modules/modern-normalize/modern-normalize.css";
 import "./reset.css";
+import { motion } from "framer-motion";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import { useEffect, useState, useRef } from "react";
@@ -9,8 +9,25 @@ import Services from "./components/services/Services";
 import Portfolio from "./components/portfolio/Portfolio";
 import { TbSquareRoundedArrowUpFilled } from "react-icons/tb";
 import Client from "./components/client/Client";
+import Contact from "./components/contacts/Contact";
+
+import Footer from "./components/footer/Footer";
+import LoadingPage from "./components/loading_page/LoadingPage";
+
+const content = {
+  initial: { y: -20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+};
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [scroll, setScroll] = useState(false);
   const [upScroll, setUpScroll] = useState(false);
 
@@ -34,8 +51,12 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
   return (
-    <div>
+    <motion.div initial="initial" animate="animate" variants={content}>
       <div id="home"></div>
       <header>
         <Header className={scroll ? "header stickyadd" : "header"} />
@@ -46,6 +67,9 @@ function App() {
         <Services />
         <Portfolio />
         <Client />
+        <Contact />
+        <Footer />
+        <LoadingPage isVisible={isLoading} />
       </main>
       <footer></footer>
       <div className={upScroll ? "up__scroll show" : "up__scroll hidden"}>
@@ -53,7 +77,7 @@ function App() {
           <TbSquareRoundedArrowUpFilled size={50} className="up__scroll-icon" />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

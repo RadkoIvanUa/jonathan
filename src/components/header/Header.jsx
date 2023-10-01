@@ -88,10 +88,16 @@ export default function Header({ className }) {
                 Client
               </Link>
             </li>
-            <li>
-              <a href="" className="header__nav-link">
+            <li className="header__nav-item">
+              <Link
+                activeClass="active"
+                className="header__nav-link"
+                spy={true}
+                to={"contact"}
+                offset={0}
+              >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -190,9 +196,18 @@ export default function Header({ className }) {
               </Link>
             </li>
             <li className="mobile__header-nav-item">
-              <a href="" className="mobile__header-nav-link">
+              <Link
+                className="mobile__header-nav-link"
+                to="contact"
+                activeClass="active"
+                spy={true}
+                offset={-40}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                }}
+              >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
