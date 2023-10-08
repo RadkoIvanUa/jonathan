@@ -6,10 +6,21 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { TextField } from "@mui/material";
+import { ThreeDots } from "react-loader-spinner";
+
+import { motion } from "framer-motion";
+
+const test = {
+  initial: { opacity: 0, y: 200 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { type: "Inertia", stiffness: 100, delay: 0.3 },
+};
 
 export default function Contact() {
+  const [isSending, setIsSending] = useState(false);
   const form = useRef();
 
   const formik = useFormik({
@@ -24,9 +35,8 @@ export default function Contact() {
         .required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
     }),
-    onSubmit: (values) => {
-      console.log(values);
-
+    onSubmit: () => {
+      setIsSending(true);
       emailjs
         .sendForm(
           "service_ii4lrol",
@@ -35,8 +45,7 @@ export default function Contact() {
           "sSUxd-15JpuCTbCrl"
         )
         .then(
-          (result) => {
-            console.log(result.text);
+          () => {
             toast.success("Thanks for choosing our services!", {
               position: "top-right",
               autoClose: 5000,
@@ -47,6 +56,8 @@ export default function Contact() {
               progress: undefined,
               theme: "light",
             });
+
+            setIsSending(false);
           },
           (error) => {
             console.log(error.text);
@@ -56,13 +67,25 @@ export default function Contact() {
     },
   });
   return (
-    <section className="section contact" id="contact">
+    <motion.section
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
+      className="section contact"
+      id="contact"
+    >
       <div className="container">
         <h1 className="section__title">
           <span>Contact</span> us
         </h1>
         <div className="contact__flex">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "Inertia", stiffness: 100, delay: 0.4 }}
+          >
             <p className="contact__text">
               I'm always open to discussing product design work or partnerships.
             </p>
@@ -70,8 +93,16 @@ export default function Contact() {
               <a href="tel:+14251234563">+1 (425) 123-45-63</a>
               <a href="mailto:example@mail.ua">example@mail.ua</a>
             </div>
-          </div>
-          <form
+          </motion.div>
+          <motion.form
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "Inertia",
+              stiffness: 100,
+              delay: 0.4,
+            }}
             ref={form}
             onSubmit={formik.handleSubmit}
             className="contact__form"
@@ -116,14 +147,36 @@ export default function Contact() {
               value={formik.values.message}
             />
 
-            <button className="contact__form-btn" type="submit">
-              Submit
+            <button
+              disabled={isSending ? true : false}
+              className="contact__form-btn"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              type="submit"
+            >
+              {isSending ? (
+                <ThreeDots
+                  height="25"
+                  width="25"
+                  radius="9"
+                  color="#FFF"
+                  ariaLabel="three-dots-loading"
+                  wrapperStyle={{ margin: 0 }}
+                  wrapperClassName=""
+                  visible={true}
+                />
+              ) : (
+                "Submit"
+              )}
             </button>
-          </form>
+          </motion.form>
         </div>
 
         <ToastContainer style={{ zIndex: 1000000 }} />
       </div>
-    </section>
+    </motion.section>
   );
 }

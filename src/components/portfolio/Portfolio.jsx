@@ -5,6 +5,8 @@ import galery_filter from "../../helpers/galery_filter";
 import portfolioItems from "../../portfolio_items";
 import ModalWindow from "../modal/Modal";
 
+import { motion } from "framer-motion";
+
 export default function Portfolio() {
   const [largeImageURL, setLargeImageURL] = useState();
   const [description, setDescription] = useState();
@@ -44,7 +46,14 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <section className="portfolio__section section" id="portfolio">
+    <motion.section
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
+      className="portfolio__section section"
+      id="portfolio"
+    >
       <div className="container">
         <h3 className="portfolio__title section__title">
           <span>Our</span> Works
@@ -149,6 +158,6 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

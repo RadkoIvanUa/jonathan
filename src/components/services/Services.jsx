@@ -6,10 +6,18 @@ import { GoPackage } from "react-icons/go";
 import { TbSocial } from "react-icons/tb";
 import { FiPrinter } from "react-icons/fi";
 import { AiOutlinePicture } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 export default function Services() {
   return (
-    <section className="services__section section" id="services">
+    <motion.section
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
+      className="services__section section"
+      id="services"
+    >
       <div className="container">
         <h2 className="servises__title section__title">
           <span>Our</span> Services
@@ -18,7 +26,13 @@ export default function Services() {
           It is a long established fact that a reader will be of a page when
           established fact looking at its layout.
         </p>
-        <ul className="services__list">
+        <motion.ul
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: "Inertia", stiffness: 100, delay: 0.4 }}
+          className="services__list"
+        >
           <li className="services__list-item">
             <div className="services__item-icon">
               <CgWebsite size={60} className="services__item-icon-svg" />
@@ -79,8 +93,8 @@ export default function Services() {
               suffered alteration in some form.
             </p>
           </li>
-        </ul>
+        </motion.ul>
       </div>
-    </section>
+    </motion.section>
   );
 }

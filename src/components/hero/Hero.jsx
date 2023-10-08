@@ -3,6 +3,8 @@ import "./hero.css";
 
 import { SlMouse } from "react-icons/sl";
 import { Link } from "react-scroll";
+import { isMobile } from "react-device-detect";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const windowSize = useRef([window.innerWidth]);
@@ -31,15 +33,26 @@ export default function Hero() {
           activeClass="active"
           spy={true}
           smooth={true}
-          offset={-1}
           duration={500}
+          offset={isMobile ? -7 : -200}
         >
-          <button className="hero__scroll" type="button">
+          <motion.button
+            animate={{ y: [10, 0, 10], x: [-30] }}
+            transition={{
+              duration: 1,
+
+              times: [0, 1],
+              repeat: Infinity,
+              repeatDelay: 0.5,
+            }}
+            className="hero__scroll"
+            type="button"
+          >
             <SlMouse
               size={windowSize.current[0] < 768 ? 40 : 60}
               color="white"
             />
-          </button>
+          </motion.button>
         </Link>
       </div>
     </>

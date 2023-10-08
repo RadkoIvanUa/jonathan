@@ -1,5 +1,6 @@
 import "./about.css";
 import aboutImg from "../../img/about/about_photo.jpg";
+import { motion } from "framer-motion";
 
 import {
   BsFacebook,
@@ -10,7 +11,14 @@ import {
 
 export default function About() {
   return (
-    <section className="section about" id="about">
+    <motion.section
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
+      className="section about"
+      id="about"
+    >
       <div className="container">
         <div className="about__img-wrapper">
           <img className="about__img" src={aboutImg} width={450} />
@@ -53,6 +61,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

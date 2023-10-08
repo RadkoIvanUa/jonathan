@@ -50,7 +50,7 @@ export default function Header({ className }) {
                 to={"about"}
                 spy={true}
                 activeClass="active"
-                offset={isMobile ? -7 : -10}
+                offset={isMobile ? -7 : -200}
               >
                 About
               </Link>
@@ -61,7 +61,7 @@ export default function Header({ className }) {
                 className="header__nav-link"
                 to={"services"}
                 spy={true}
-                offset={isMobile ? 0 : -5}
+                offset={isMobile ? 0 : -200}
               >
                 Services
               </Link>
@@ -72,7 +72,7 @@ export default function Header({ className }) {
                 className="header__nav-link"
                 spy={true}
                 to={"portfolio"}
-                offset={isMobile ? 0 : -5}
+                offset={isMobile ? 0 : -200}
               >
                 Portfolio
               </Link>
@@ -83,7 +83,7 @@ export default function Header({ className }) {
                 className="header__nav-link"
                 spy={true}
                 to={"client"}
-                offset={0}
+                offset={isMobile ? 0 : -200}
               >
                 Client
               </Link>
@@ -94,7 +94,7 @@ export default function Header({ className }) {
                 className="header__nav-link"
                 spy={true}
                 to={"contact"}
-                offset={0}
+                offset={isMobile ? 0 : -200}
               >
                 Contact
               </Link>

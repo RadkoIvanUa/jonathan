@@ -1,14 +1,14 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
 import "./client.css";
+
+import { motion } from "framer-motion";
 
 import client1 from "../../img/client/client_1.jpg";
 import client2 from "../../img/client/client_2.jpg";
@@ -37,7 +37,14 @@ const breakpoints = {
 
 export default function Client() {
   return (
-    <section className="client__section section" id="client">
+    <motion.section
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
+      className="client__section section"
+      id="client"
+    >
       <div className="container">
         <h3 className="section__title">
           <span>Client</span> Speak
@@ -172,6 +179,6 @@ export default function Client() {
           </SwiperSlide>
         </Swiper>
       </div>
-    </section>
+    </motion.section>
   );
 }
