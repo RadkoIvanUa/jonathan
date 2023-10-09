@@ -1,7 +1,6 @@
 import "../node_modules/modern-normalize/modern-normalize.css";
 import "./reset.css";
 
-import { motion } from "framer-motion";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import { useEffect, useState, useRef } from "react";
@@ -15,7 +14,6 @@ import Contact from "./components/contacts/Contact";
 import Footer from "./components/footer/Footer";
 import LoadingPage from "./components/loading_page/LoadingPage";
 import { ToastContainer } from "react-toastify";
-import Loader from "react-loaders";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
