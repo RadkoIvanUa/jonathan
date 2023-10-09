@@ -14,19 +14,19 @@ export default function About() {
     <section className="section about" id="about">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, x: -300 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 300 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ type: "Inertia", stiffness: 100, delay: 0.5 }}
+          transition={{ ease: [0.4, 0, 0.2, 1], duration: 1 }}
           className="about__img-wrapper"
         >
           <img className="about__img" src={aboutImg} width={450} />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 300 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 300 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ type: "Inertia", stiffness: 100, delay: 0.8 }}
+          transition={{ ease: [0.4, 0, 0.2, 1], duration: 1, delay: 0.3 }}
         >
           <h2 className="about__title section__title">
             <span>About</span> Me
@@ -51,37 +51,37 @@ export default function About() {
           </div>
           <div className="about__icons-wrapper">
             <motion.a
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ type: "Inertia", stiffness: 100, delay: 1 }}
+              transition={{ ease: "easeOut", duration: 0.8, delay: 0.5 }}
               href="https://dribbble.com/"
             >
               <BsDribbble size={20} />
             </motion.a>
             <motion.a
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ type: "Inertia", stiffness: 100, delay: 1.1 }}
+              transition={{ ease: "easeOut", duration: 0.8, delay: 0.6 }}
               href="https://www.facebook.com/"
             >
               <BsFacebook size={20} />
             </motion.a>
             <motion.a
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ type: "Inertia", stiffness: 100, delay: 1.2 }}
+              transition={{ ease: "easeOut", duration: 0.8, delay: 0.7 }}
               href="https://www.linkedin.com/"
             >
               <BsLinkedin size={20} />
             </motion.a>
             <motion.a
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ type: "Inertia", stiffness: 100, delay: 1.3 }}
+              transition={{ ease: "easeOut", duration: 0.8, delay: 0.8 }}
               href="https://www.instagram.com/"
             >
               <BsInstagram size={20} />

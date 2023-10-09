@@ -7,16 +7,9 @@ export default function LoadingPage({ isVisible }) {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ height: "100vh", bottom: 0 }}
-          animate={{
-            height: 0,
-            transition: {
-              when: "afterChildren",
-              duration: 2,
-              ease: [0.87, 0, 0.13, 1],
-            },
-          }}
-          exit={{ duration: 2, opacity: 0 }}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0, height: 0 }}
+          transition={{ ease: [0.4, 0, 0.2, 1], duration: 1, delay: 0.3 }}
           style={{
             display: "flex",
             alignItems: "center",
@@ -31,14 +24,20 @@ export default function LoadingPage({ isVisible }) {
             zIndex: 10000000,
           }}
         >
-          <Puff
-            height="150"
-            width="150"
-            radius={1}
-            color="white"
-            ariaLabel="puff-loading"
-            visible={true}
-          />
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0, scale: 0 }}
+            transition={{ ease: [0.4, 0, 0.2, 1], duration: 1, delay: 0.3 }}
+          >
+            <Puff
+              height="150"
+              width="150"
+              radius={1}
+              color="white"
+              ariaLabel="puff-loading"
+              visible={true}
+            />
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

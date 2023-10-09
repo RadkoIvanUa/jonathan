@@ -63,10 +63,10 @@ export default function Contact() {
     <section className="section contact" id="contact">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 200 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ ease: [0.4, 0, 0.2, 1], duration: 1 }}
           viewport={{ once: true }}
-          transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
         >
           <h1 className="section__title">
             <span>Contact</span> us
@@ -74,10 +74,10 @@ export default function Contact() {
         </motion.div>
         <div className="contact__flex">
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ ease: [0.4, 0, 0.2, 1], duration: 1, delay: 0.3 }}
             viewport={{ once: true }}
-            transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
           >
             <p className="contact__text">
               I'm always open to discussing product design work or partnerships.
@@ -89,10 +89,10 @@ export default function Contact() {
           </motion.div>
 
           <motion.form
-            initial={{ opacity: 0, x: 200 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ ease: [0.4, 0, 0.2, 1], duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
-            transition={{ type: "Inertia", stiffness: 100, delay: 0.5 }}
             ref={form}
             onSubmit={formik.handleSubmit}
             className="contact__form"

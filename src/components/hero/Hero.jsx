@@ -22,9 +22,10 @@ export default function Hero() {
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             viewport={{ once: true }}
-            transition={{ type: "Inertia", stiffness: 100, delay: 0.5 }}
+            transition={{ ease: [0.4, 0, 0.2, 1], duration: 1.5 }}
           >
             <p className="hero__text">Welcome</p>
             <h1 className="hero__title">

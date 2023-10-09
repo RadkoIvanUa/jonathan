@@ -60,9 +60,10 @@ img {
 }
 
 .container {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 16px;
   margin: 0 auto;
+
+  overflow: hidden;
 }
 .section {
   padding: 50px 0 50px 0;

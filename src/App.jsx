@@ -15,19 +15,6 @@ import Footer from "./components/footer/Footer";
 import LoadingPage from "./components/loading_page/LoadingPage";
 import { ToastContainer } from "react-toastify";
 
-const content = {
-  initial: { y: -20, opacity: 0 },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.7,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-  whileInView: { opacity: 1, y: 0 },
-};
-
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [scroll, setScroll] = useState(false);
@@ -54,11 +41,13 @@ function App() {
   }, []);
 
   useEffect(() => {
+    // setTimeout(() => {
     setIsLoading(false);
+    // }, 5000);
   }, []);
 
   return (
-    <motion.div initial="initial" animate="animate" variants={content}>
+    <>
       <div id="home"></div>
       <header>
         <Header className={scroll ? "header stickyadd" : "header"} />
@@ -80,7 +69,7 @@ function App() {
           <TbSquareRoundedArrowUpFilled size={50} className="up__scroll-icon" />
         </a>
       </div>
-    </motion.div>
+    </>
   );
 }
 
