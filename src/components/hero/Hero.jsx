@@ -53,7 +53,6 @@ export default function Hero() {
           spy={true}
           smooth={true}
           duration={500}
-          offset={isMobile ? -7 : -200}
         >
           <motion.button
             animate={{ y: [10, 0, 10], x: [-30] }}

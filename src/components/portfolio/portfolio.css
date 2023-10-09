@@ -108,6 +108,10 @@ nav .items span {
     flex-basis: calc((100% - 10px) / 2);
   }
 
+  .gallery li:not(:last-child) {
+    margin-bottom: 0;
+  }
+
   .wrapper .items {
     justify-content: center;
     flex-wrap: wrap;

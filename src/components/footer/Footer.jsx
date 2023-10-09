@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <section className="footer__section section">
+    <div className="footer__section">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -20,14 +20,19 @@ export default function Footer() {
           className="footer__wrapper"
         >
           <div>
-            <p>All Rights Reserved by ScriptSculptor.</p>
             <p>
-              Designed by{" "}
-              <a href="#" style={{ color: "var( --primary-brand-color)" }}>
-                ScriptSculptor
+              Copyright © 2023{" "}
+              <a href="#" style={{ color: "var(--primary-brand-color)" }}>
+                Jonathan
               </a>
             </p>
-            <p>Copyright © 2023</p>
+            <p>
+              Designed by{" "}
+              <a href="#" style={{ color: "var(--primary-brand-color)" }}>
+                ScriptSculptor
+              </a>
+              <p>All Rights Reserved</p>
+            </p>
           </div>
           <div className="about__icons-wrapper">
             <motion.a
@@ -69,6 +74,6 @@ export default function Footer() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }

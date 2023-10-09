@@ -19,6 +19,7 @@
     "body-scroll-lock": "^4.0.0-beta.0",
     "formik": "^2.4.5",
     "framer-motion": "^10.16.4",
+    "loaders.css": "^0.1.2",
     "modern-normalize": "^2.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",

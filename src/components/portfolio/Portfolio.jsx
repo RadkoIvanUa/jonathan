@@ -14,9 +14,7 @@ export default function Portfolio() {
   const [title, setTitle] = useState();
   const [category, setCategory] = useState();
   const [website, setWebsite] = useState();
-
   const [linkToVideo, setLinkToVideo] = useState(false);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = (e) => {
@@ -26,7 +24,6 @@ export default function Portfolio() {
     const title = e.target.dataset.title;
     const category = e.target.dataset.category;
     const website = e.target.dataset.website;
-
     const linkToVideo = e.target.dataset.video;
 
     if (!largeImageURL) {
@@ -94,10 +91,11 @@ export default function Portfolio() {
                 </button>
               </div>
             </motion.nav>
+
             <motion.ul
               initial={{ opacity: 0, y: 200 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ ease: [0.4, 0, 0.2, 1], duration: 1 }}
+              transition={{ ease: [0.4, 0, 0.2, 1], duration: 1, delay: 0.5 }}
               viewport={{ once: true }}
               className="gallery"
               onClick={handleModalOpen}
