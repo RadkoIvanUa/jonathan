@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import { useSpring, animated } from "react-spring";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { VscChromeClose } from "react-icons/vsc";
-import { isMobile } from "react-device-detect";
 
 import "./header.css";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 export default function Header({ className }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,72 +33,103 @@ export default function Header({ className }) {
             JONATHAN
           </Link>
           <ul className="header__nav-list">
-            <li className="header__nav-item">
+            <motion.li
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "Inertia", stiffness: 100, delay: 0.2 }}
+              className="header__nav-item"
+            >
               <Link
                 className="header__nav-link"
                 to={"hero"}
                 activeClass="active"
                 spy={true}
-                offset={-100}
               >
                 Home
               </Link>
-            </li>
-            <li className="header__nav-item">
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "Inertia", stiffness: 100, delay: 0.4 }}
+              className="header__nav-item"
+            >
               <Link
                 className="header__nav-link"
                 to={"about"}
                 spy={true}
                 activeClass="active"
-                offset={isMobile ? -7 : -200}
+                // offset={-200}
               >
                 About
               </Link>
-            </li>
-            <li className="header__nav-item">
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "Inertia", stiffness: 100, delay: 0.6 }}
+              className="header__nav-item"
+            >
               <Link
                 activeClass="active"
                 className="header__nav-link"
                 to={"services"}
                 spy={true}
-                offset={isMobile ? 0 : -200}
               >
                 Services
               </Link>
-            </li>
-            <li className="header__nav-item">
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "Inertia", stiffness: 100, delay: 0.8 }}
+              className="header__nav-item"
+            >
               <Link
                 activeClass="active"
                 className="header__nav-link"
                 spy={true}
                 to={"portfolio"}
-                offset={isMobile ? 0 : -200}
               >
                 Portfolio
               </Link>
-            </li>
-            <li className="header__nav-item">
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "Inertia", stiffness: 100, delay: 1 }}
+              className="header__nav-item"
+            >
               <Link
                 activeClass="active"
                 className="header__nav-link"
                 spy={true}
                 to={"client"}
-                offset={isMobile ? 0 : -200}
               >
                 Client
               </Link>
-            </li>
-            <li className="header__nav-item">
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "Inertia", stiffness: 100, delay: 1.2 }}
+              className="header__nav-item"
+            >
               <Link
                 activeClass="active"
                 className="header__nav-link"
                 spy={true}
                 to={"contact"}
-                offset={isMobile ? 0 : -200}
               >
                 Contact
               </Link>
-            </li>
+            </motion.li>
           </ul>
 
           {/* mobile  */}

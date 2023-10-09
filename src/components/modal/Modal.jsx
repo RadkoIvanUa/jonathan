@@ -11,6 +11,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 
 import { useEffect, useRef, useState } from "react";
+import ReactPlayer from "react-player";
 
 export default function ModalWindow({
   isModalOpen,
@@ -21,6 +22,8 @@ export default function ModalWindow({
   title,
   category,
   website,
+
+  video,
 }) {
   const [open, setOpen] = useState(false);
   const [modalWidth, setModalWidth] = useState();
@@ -96,7 +99,16 @@ export default function ModalWindow({
         <Fade in={open}>
           <Box sx={style} className="modal">
             <div className="modal__img-thumb">
-              <img src={largeImageURL} alt="" width="800px" />
+              {video ? (
+                <ReactPlayer
+                  width={"100%"}
+                  height={"100%"}
+                  controls={true}
+                  url={video}
+                />
+              ) : (
+                <img src={largeImageURL} alt="" width="800px" />
+              )}
             </div>
 
             <Box className="modal__bottom-content">

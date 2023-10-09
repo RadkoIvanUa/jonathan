@@ -6,11 +6,19 @@ import {
 } from "react-icons/bs";
 import "./footer.css";
 
+import { motion } from "framer-motion";
+
 export default function Footer() {
   return (
     <section className="footer__section section">
       <div className="container">
-        <div className="footer__wrapper">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
+          className="footer__wrapper"
+        >
           <div>
             <p>All Rights Reserved by ScriptSculptor.</p>
             <p>
@@ -22,20 +30,44 @@ export default function Footer() {
             <p>Copyright © 2023</p>
           </div>
           <div className="about__icons-wrapper">
-            <a href="https://dribbble.com/">
+            <motion.a
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "Inertia", stiffness: 100, delay: 0.5 }}
+              href="https://dribbble.com/"
+            >
               <BsDribbble size={20} />
-            </a>
-            <a href="https://www.facebook.com/">
+            </motion.a>
+            <motion.a
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "Inertia", stiffness: 100, delay: 0.6 }}
+              href="https://www.facebook.com/"
+            >
               <BsFacebook size={20} />
-            </a>
-            <a href="https://www.linkedin.com/">
+            </motion.a>
+            <motion.a
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "Inertia", stiffness: 100, delay: 0.7 }}
+              href="https://www.linkedin.com/"
+            >
               <BsLinkedin size={20} />
-            </a>
-            <a href="https://www.instagram.com/">
+            </motion.a>
+            <motion.a
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "Inertia", stiffness: 100, delay: 0.8 }}
+              href="https://www.instagram.com/"
+            >
               <BsInstagram size={20} />
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

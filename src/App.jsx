@@ -13,6 +13,7 @@ import Contact from "./components/contacts/Contact";
 
 import Footer from "./components/footer/Footer";
 import LoadingPage from "./components/loading_page/LoadingPage";
+import { ToastContainer } from "react-toastify";
 
 const content = {
   initial: { y: -20, opacity: 0 },
@@ -71,6 +72,7 @@ function App() {
         <Contact />
         <Footer />
         <LoadingPage isVisible={isLoading} />
+        <ToastContainer style={{ zIndex: 1000000 }} />
       </main>
       <footer></footer>
       <div className={upScroll ? "up__scroll show" : "up__scroll hidden"}>

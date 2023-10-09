@@ -5,27 +5,44 @@ import { SlMouse } from "react-icons/sl";
 import { Link } from "react-scroll";
 import { isMobile } from "react-device-detect";
 import { motion } from "framer-motion";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 export default function Hero() {
   const windowSize = useRef([window.innerWidth]);
+
+  const [text] = useTypewriter({
+    words: ["Jonathan", "Developer", "Designer", "Photographer"],
+    delaySpeed: 1500,
+  });
 
   return (
     <>
       <div className="hero">
         <div className="container">
-          <p className="hero__text">Welcome</p>
-          <h1 className="hero__title">I`m a Graphic designer</h1>
-          <p className="hero__subtitle">
-            Loremus ipsum dolor sit amet consectetur adipisicing elit, nostrum!
-          </p>
-          <button className="hero__btn">
-            <a
-              href="public\download__sample\download_sample.txt"
-              download={true}
-            >
-              Download CV
-            </a>
-          </button>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "Inertia", stiffness: 100, delay: 0.5 }}
+          >
+            <p className="hero__text">Welcome</p>
+            <h1 className="hero__title">
+              I`m a {text}
+              <Cursor cursorColor="white" />
+            </h1>
+            <p className="hero__subtitle">
+              Loremus ipsum dolor sit amet consectetur adipisicing elit,
+              nostrum!
+            </p>
+            <button className="hero__btn">
+              <a
+                href="public\download__sample\download_sample.txt"
+                download={true}
+              >
+                Download CV
+              </a>
+            </button>
+          </motion.div>
         </div>
 
         <Link

@@ -10,30 +10,30 @@ import { motion } from "framer-motion";
 
 export default function Services() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
-      className="services__section section"
-      id="services"
-    >
+    <section className="services__section section" id="services">
       <div className="container">
-        <h2 className="servises__title section__title">
-          <span>Our</span> Services
-        </h2>
-        <p className="services__subtitle section__subtitle">
-          It is a long established fact that a reader will be of a page when
-          established fact looking at its layout.
-        </p>
-        <motion.ul
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
+        <motion.div
+          initial={{ opacity: 0, y: 200 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ type: "Inertia", stiffness: 100, delay: 0.4 }}
-          className="services__list"
+          transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
         >
-          <li className="services__list-item">
+          <h2 className="servises__title section__title">
+            <span>Our</span> Services
+          </h2>
+          <p className="services__subtitle section__subtitle">
+            It is a long established fact that a reader will be of a page when
+            established fact looking at its layout.
+          </p>
+        </motion.div>
+        <ul className="services__list">
+          <motion.li
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "Inertia", stiffness: 100, delay: 0.6 }}
+            className="services__list-item"
+          >
             <div className="services__item-icon">
               <CgWebsite size={60} className="services__item-icon-svg" />
             </div>
@@ -42,8 +42,14 @@ export default function Services() {
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
-          </li>
-          <li className="services__list-item">
+          </motion.li>
+          <motion.li
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "Inertia", stiffness: 100, delay: 0.6 }}
+            className="services__list-item"
+          >
             <div className="services__item-icon">
               <BiLogo500Px size={60} className="services__item-icon-svg" />
             </div>
@@ -52,8 +58,14 @@ export default function Services() {
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
-          </li>
-          <li className="services__list-item">
+          </motion.li>
+          <motion.li
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "Inertia", stiffness: 100, delay: 0.6 }}
+            className="services__list-item"
+          >
             <div className="services__item-icon">
               <GoPackage size={60} className="services__item-icon-svg" />
             </div>
@@ -62,8 +74,14 @@ export default function Services() {
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
-          </li>
-          <li className="services__list-item">
+          </motion.li>
+          <motion.li
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "Inertia", stiffness: 100, delay: 0.8 }}
+            className="services__list-item"
+          >
             <div className="services__item-icon">
               <TbSocial size={60} className="services__item-icon-svg" />
             </div>
@@ -72,8 +90,14 @@ export default function Services() {
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
-          </li>
-          <li className="services__list-item">
+          </motion.li>
+          <motion.li
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "Inertia", stiffness: 100, delay: 0.8 }}
+            className="services__list-item"
+          >
             <div className="services__item-icon">
               <FiPrinter size={60} className="services__item-icon-svg" />
             </div>
@@ -82,8 +106,14 @@ export default function Services() {
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
-          </li>
-          <li className="services__list-item">
+          </motion.li>
+          <motion.li
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "Inertia", stiffness: 100, delay: 0.8 }}
+            className="services__list-item"
+          >
             <div className="services__item-icon">
               <AiOutlinePicture size={60} className="services__item-icon-svg" />
             </div>
@@ -92,9 +122,9 @@ export default function Services() {
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
-          </li>
-        </motion.ul>
+          </motion.li>
+        </ul>
       </div>
-    </motion.section>
+    </section>
   );
 }

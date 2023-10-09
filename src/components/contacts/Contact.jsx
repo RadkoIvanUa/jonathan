@@ -12,13 +12,6 @@ import { ThreeDots } from "react-loader-spinner";
 
 import { motion } from "framer-motion";
 
-const test = {
-  initial: { opacity: 0, y: 200 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { type: "Inertia", stiffness: 100, delay: 0.3 },
-};
-
 export default function Contact() {
   const [isSending, setIsSending] = useState(false);
   const form = useRef();
@@ -67,24 +60,24 @@ export default function Contact() {
     },
   });
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
-      className="section contact"
-      id="contact"
-    >
+    <section className="section contact" id="contact">
       <div className="container">
-        <h1 className="section__title">
-          <span>Contact</span> us
-        </h1>
+        <motion.div
+          initial={{ opacity: 0, y: 200 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
+        >
+          <h1 className="section__title">
+            <span>Contact</span> us
+          </h1>
+        </motion.div>
         <div className="contact__flex">
           <motion.div
             initial={{ opacity: 0, x: -200 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ type: "Inertia", stiffness: 100, delay: 0.4 }}
+            transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
           >
             <p className="contact__text">
               I'm always open to discussing product design work or partnerships.
@@ -94,89 +87,86 @@ export default function Contact() {
               <a href="mailto:example@mail.ua">example@mail.ua</a>
             </div>
           </motion.div>
-          <motion.form
-            initial={{ opacity: 0, x: 200 }}
-            whileInView={{ opacity: 1, x: 0 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{
-              type: "Inertia",
-              stiffness: 100,
-              delay: 0.4,
-            }}
-            ref={form}
-            onSubmit={formik.handleSubmit}
-            className="contact__form"
+            transition={{ type: "Inertia", stiffness: 100, delay: 0.5 }}
           >
-            <TextField
-              fullWidth
-              size="small"
-              label="Name"
-              variant="outlined"
-              required
-              id="name"
-              name="name"
-              type="text"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.name}
-            />
-
-            <TextField
-              fullWidth
-              size="small"
-              label="Email"
-              variant="outlined"
-              required
-              id="email"
-              name="email"
-              type="email"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-            />
-
-            <TextField
-              fullWidth
-              multiline
-              rows={4}
-              label="Message"
-              id="message"
-              name="message"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.message}
-            />
-
-            <button
-              disabled={isSending ? true : false}
-              className="contact__form-btn"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              type="submit"
+            <form
+              ref={form}
+              onSubmit={formik.handleSubmit}
+              className="contact__form"
             >
-              {isSending ? (
-                <ThreeDots
-                  height="25"
-                  width="25"
-                  radius="9"
-                  color="#FFF"
-                  ariaLabel="three-dots-loading"
-                  wrapperStyle={{ margin: 0 }}
-                  wrapperClassName=""
-                  visible={true}
-                />
-              ) : (
-                "Submit"
-              )}
-            </button>
-          </motion.form>
-        </div>
+              <TextField
+                fullWidth
+                size="small"
+                label="Name"
+                variant="outlined"
+                required
+                id="name"
+                name="name"
+                type="text"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.name}
+              />
 
-        <ToastContainer style={{ zIndex: 1000000 }} />
+              <TextField
+                fullWidth
+                size="small"
+                label="Email"
+                variant="outlined"
+                required
+                id="email"
+                name="email"
+                type="email"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+              />
+
+              <TextField
+                fullWidth
+                multiline
+                rows={4}
+                label="Message"
+                id="message"
+                name="message"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.message}
+              />
+
+              <button
+                disabled={isSending ? true : false}
+                className="contact__form-btn"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                type="submit"
+              >
+                {isSending ? (
+                  <ThreeDots
+                    height="25"
+                    width="25"
+                    radius="9"
+                    color="#FFF"
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{ margin: 0 }}
+                    wrapperClassName=""
+                    visible={true}
+                  />
+                ) : (
+                  "Submit"
+                )}
+              </button>
+            </form>
+          </motion.div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

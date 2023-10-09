@@ -21,6 +21,8 @@ const portfolioItems = [
 
     client: "Envato",
     website: "https://www.envato.com/",
+
+    video: "https://www.youtube.com/watch?v=LXb3EKWsInQ",
   },
   {
     link: two,
@@ -39,6 +41,8 @@ const portfolioItems = [
       "This is a project to develop a website for the innovative electric car 'EcoDrive.' The 'EcoDrive' electric car aims to create efficient and environmentally friendly transportation, contributing to a reduction in harmful emissions and fuel consumption",
     client: "Envato",
     website: "https://www.envato.com/",
+
+    video: "https://vimeo.com/306705787",
   },
   {
     link: four,

@@ -15,6 +15,8 @@ export default function Portfolio() {
   const [category, setCategory] = useState();
   const [website, setWebsite] = useState();
 
+  const [linkToVideo, setLinkToVideo] = useState(false);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = (e) => {
@@ -24,6 +26,8 @@ export default function Portfolio() {
     const title = e.target.dataset.title;
     const category = e.target.dataset.category;
     const website = e.target.dataset.website;
+
+    const linkToVideo = e.target.dataset.video;
 
     if (!largeImageURL) {
       return;
@@ -35,6 +39,7 @@ export default function Portfolio() {
     setTitle(title);
     setCategory(category);
     setWebsite(website);
+    setLinkToVideo(linkToVideo);
 
     setIsModalOpen(true);
   };
@@ -46,21 +51,25 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
-      className="portfolio__section section"
-      id="portfolio"
-    >
+    <section className="portfolio__section section" id="portfolio">
       <div className="container">
-        <h3 className="portfolio__title section__title">
+        <motion.h3
+          initial={{ opacity: 0, y: 200 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
+          className="portfolio__title section__title"
+        >
           <span>Our</span> Works
-        </h3>
+        </motion.h3>
         <div>
           <div className="wrapper">
-            <nav>
+            <motion.nav
+              initial={{ opacity: 0, y: 200 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "Inertia", stiffness: 100, delay: 0.5 }}
+            >
               <div className="items">
                 <button className="item active" data-name="all">
                   All
@@ -84,10 +93,14 @@ export default function Portfolio() {
                   Illustration
                 </button>
               </div>
-            </nav>
+            </motion.nav>
             <ul className="gallery" onClick={handleModalOpen}>
               {portfolioItems.map((item, index) => (
-                <li
+                <motion.li
+                  initial={{ opacity: 0, y: 200 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "Inertia", stiffness: 100, delay: 0.5 }}
                   key={index}
                   className="image__thumb image"
                   data-name={item.category}
@@ -106,6 +119,7 @@ export default function Portfolio() {
                       data-title={item.title}
                       data-category={item.category}
                       data-website={item.website}
+                      data-video={item.video}
                       alt=""
                       width="300px"
                     />
@@ -117,6 +131,7 @@ export default function Portfolio() {
                       data-title={item.title}
                       data-category={item.category}
                       data-website={item.website}
+                      data-video={item.video}
                     >
                       <p
                         className="overlay__title"
@@ -126,6 +141,7 @@ export default function Portfolio() {
                         data-title={item.title}
                         data-category={item.category}
                         data-website={item.website}
+                        data-video={item.video}
                       >
                         {item.title}
                       </p>
@@ -137,12 +153,13 @@ export default function Portfolio() {
                         data-title={item.title}
                         data-category={item.category}
                         data-website={item.website}
+                        data-video={item.video}
                       >
                         {item.category}
                       </p>
                     </div>
                   </a>
-                </li>
+                </motion.li>
               ))}
               <ModalWindow
                 largeImageURL={largeImageURL}
@@ -153,11 +170,12 @@ export default function Portfolio() {
                 title={title}
                 category={category}
                 website={website}
+                video={linkToVideo}
               />
             </ul>
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
