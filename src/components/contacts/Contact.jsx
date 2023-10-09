@@ -63,8 +63,8 @@ export default function Contact() {
     <section className="section contact" id="contact">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 200 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ type: "Inertia", stiffness: 100, delay: 0.3 }}
         >
@@ -87,84 +87,82 @@ export default function Contact() {
               <a href="mailto:example@mail.ua">example@mail.ua</a>
             </div>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+
+          <motion.form
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ type: "Inertia", stiffness: 100, delay: 0.5 }}
+            ref={form}
+            onSubmit={formik.handleSubmit}
+            className="contact__form"
           >
-            <form
-              ref={form}
-              onSubmit={formik.handleSubmit}
-              className="contact__form"
+            <TextField
+              fullWidth
+              size="small"
+              label="Name"
+              variant="outlined"
+              required
+              id="name"
+              name="name"
+              type="text"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
+            />
+
+            <TextField
+              fullWidth
+              size="small"
+              label="Email"
+              variant="outlined"
+              required
+              id="email"
+              name="email"
+              type="email"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+            />
+
+            <TextField
+              fullWidth
+              multiline
+              rows={4}
+              label="Message"
+              id="message"
+              name="message"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.message}
+            />
+
+            <button
+              disabled={isSending ? true : false}
+              className="contact__form-btn"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              type="submit"
             >
-              <TextField
-                fullWidth
-                size="small"
-                label="Name"
-                variant="outlined"
-                required
-                id="name"
-                name="name"
-                type="text"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.name}
-              />
-
-              <TextField
-                fullWidth
-                size="small"
-                label="Email"
-                variant="outlined"
-                required
-                id="email"
-                name="email"
-                type="email"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
-              />
-
-              <TextField
-                fullWidth
-                multiline
-                rows={4}
-                label="Message"
-                id="message"
-                name="message"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.message}
-              />
-
-              <button
-                disabled={isSending ? true : false}
-                className="contact__form-btn"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-                type="submit"
-              >
-                {isSending ? (
-                  <ThreeDots
-                    height="25"
-                    width="25"
-                    radius="9"
-                    color="#FFF"
-                    ariaLabel="three-dots-loading"
-                    wrapperStyle={{ margin: 0 }}
-                    wrapperClassName=""
-                    visible={true}
-                  />
-                ) : (
-                  "Submit"
-                )}
-              </button>
-            </form>
-          </motion.div>
+              {isSending ? (
+                <ThreeDots
+                  height="25"
+                  width="25"
+                  radius="9"
+                  color="#FFF"
+                  ariaLabel="three-dots-loading"
+                  wrapperStyle={{ margin: 0 }}
+                  wrapperClassName=""
+                  visible={true}
+                />
+              ) : (
+                "Submit"
+              )}
+            </button>
+          </motion.form>
         </div>
       </div>
     </section>

@@ -51,7 +51,7 @@ export default function About() {
           </div>
           <div className="about__icons-wrapper">
             <motion.a
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ type: "Inertia", stiffness: 100, delay: 1 }}
@@ -60,7 +60,7 @@ export default function About() {
               <BsDribbble size={20} />
             </motion.a>
             <motion.a
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ type: "Inertia", stiffness: 100, delay: 1.1 }}
@@ -69,7 +69,7 @@ export default function About() {
               <BsFacebook size={20} />
             </motion.a>
             <motion.a
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ type: "Inertia", stiffness: 100, delay: 1.2 }}
@@ -78,7 +78,7 @@ export default function About() {
               <BsLinkedin size={20} />
             </motion.a>
             <motion.a
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ type: "Inertia", stiffness: 100, delay: 1.3 }}

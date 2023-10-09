@@ -1,3 +1,7 @@
+.modal {
+  width: 300px;
+}
+
 .modal::-webkit-scrollbar {
   width: 5px;
   position: absolute;
@@ -95,6 +99,9 @@
 }
 
 @media (min-width: 500px) {
+  .modal {
+    width: 450px;
+  }
   .modal__img-thumb {
     width: 450px;
     height: 300px;
@@ -102,21 +109,12 @@
 }
 
 @media (min-width: 768px) {
+  .modal {
+    width: 600px;
+  }
+
   .modal__img-thumb {
     width: 600px;
     height: 400px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .modal__img-thumb {
-    width: 800px;
-    height: 500px;
-  }
-}
-@media (min-width: 1280px) {
-  .modal__img-thumb {
-    width: 1000px;
-    height: 350px;
   }
 }

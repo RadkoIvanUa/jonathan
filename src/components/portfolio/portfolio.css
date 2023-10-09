@@ -46,10 +46,11 @@ nav .items span {
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
   margin-top: 30px;
-  gap: 10px;
+}
+
+.gallery li:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .gallery .image {
@@ -98,6 +99,11 @@ nav .items span {
 }
 
 @media (min-width: 768px) {
+  .gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
   .gallery .image {
     flex-basis: calc((100% - 10px) / 2);
   }

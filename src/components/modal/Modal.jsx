@@ -26,30 +26,6 @@ export default function ModalWindow({
   video,
 }) {
   const [open, setOpen] = useState(false);
-  const [modalWidth, setModalWidth] = useState();
-
-  const windowSizeArr = useRef([window.innerWidth]);
-
-  const windowSize = windowSizeArr.current[0];
-
-  useEffect(() => {
-    console.log(windowSize);
-    if (windowSize === 280 && windowSize < 320) {
-      setModalWidth(250);
-    } else if (windowSize === 320 && windowSize < 400) {
-      setModalWidth(280);
-    } else if (windowSize === 400 || windowSize < 500) {
-      setModalWidth(300);
-    } else if (windowSize === 500 || windowSize < 768) {
-      setModalWidth(450);
-    } else if (windowSize === 768 || windowSize < 1024) {
-      setModalWidth(600);
-    } else if (windowSize === 1024 || windowSize < 1280) {
-      setModalWidth(800);
-    } else if (windowSize >= 1280) {
-      setModalWidth(1000);
-    }
-  }, [windowSize]);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -68,7 +44,6 @@ export default function ModalWindow({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: modalWidth,
     maxHeight: "80%",
     border: "none",
     bgcolor: "background.paper",

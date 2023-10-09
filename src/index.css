@@ -40,8 +40,13 @@
 html {
   scroll-behavior: smooth;
 
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
+
+/* body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+} */
 
 a {
   text-decoration: none;

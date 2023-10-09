@@ -13,6 +13,7 @@ export default function Hero() {
   const [text] = useTypewriter({
     words: ["Jonathan", "Developer", "Designer", "Photographer"],
     delaySpeed: 1500,
+    loop: false,
   });
 
   return (
