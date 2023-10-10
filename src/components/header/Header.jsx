@@ -109,7 +109,7 @@ export default function Header({ className }) {
                 className="header__nav-link"
                 spy={true}
                 to={"client"}
-                offset={-300}
+                offset={-130}
               >
                 Client
               </Link>
@@ -125,8 +125,8 @@ export default function Header({ className }) {
                 activeClass="active"
                 className="header__nav-link"
                 spy={true}
+                offset={-210}
                 to={"contact"}
-                offset={-200}
               >
                 Contact
               </Link>

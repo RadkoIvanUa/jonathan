@@ -14,6 +14,7 @@ import Contact from "./components/contacts/Contact";
 import Footer from "./components/footer/Footer";
 import LoadingPage from "./components/loading_page/LoadingPage";
 import { ToastContainer } from "react-toastify";
+import { Link } from "react-scroll";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,6 +47,10 @@ function App() {
     // }, 5000);
   }, []);
 
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
       <div id="home"></div>
@@ -65,9 +70,9 @@ function App() {
         <Footer />
       </footer>
       <div className={upScroll ? "up__scroll show" : "up__scroll hidden"}>
-        <a href="#home">
+        <Link className="header__nav-logo" to={"hero"} spy={true}>
           <TbSquareRoundedArrowUpFilled size={40} className="up__scroll-icon" />
-        </a>
+        </Link>
       </div>
       <LoadingPage isVisible={isLoading} />
       <ToastContainer style={{ zIndex: 1000000 }} />
