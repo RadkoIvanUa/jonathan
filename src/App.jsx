@@ -20,8 +20,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [scroll, setScroll] = useState(false);
   const [upScroll, setUpScroll] = useState(false);
+  const [selectedColor, setSelectedColor] = useState("blue");
 
   const windowSize = useRef([window.innerWidth]);
+  const timestamp = Date.now(); // Генерує унікальний timestamp
 
   const handleScroll = () => {
     setScroll(window.scrollY > 50);
@@ -29,6 +31,34 @@ function App() {
   const handleUpScroll = () => {
     setUpScroll(window.scrollY > 400);
   };
+
+  useEffect(() => {
+    const importCSS = async () => {
+      // Виберіть колір на основі вибраного значення та додайте додатковий параметр для оновлення
+      let cssPath;
+
+      switch (selectedColor) {
+        case "red":
+          cssPath = `./color/red.css?version=1&timestamp=${timestamp}`;
+          break;
+        case "blue":
+          cssPath = `./color/blue.css?version=1&timestamp=${timestamp}`;
+          break;
+        case "green":
+          cssPath = `./color/green.css?version=1&timestamp=${timestamp}`;
+          break;
+        // Додайте інші варіанти кольорів за потреби
+        default:
+          cssPath = `./color/blue.css?version=1&timestamp=${timestamp}`;
+      }
+      await import(cssPath);
+      console.log(cssPath);
+
+      // Після завершення імпорту, стилі будуть автоматично застосовані
+    };
+
+    importCSS();
+  }, [selectedColor]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -46,10 +76,6 @@ function App() {
     setIsLoading(false);
     // }, 5000);
   }, []);
-
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
 
   return (
     <>
@@ -76,6 +102,28 @@ function App() {
       </div>
       <LoadingPage isVisible={isLoading} />
       <ToastContainer style={{ zIndex: 1000000 }} />
+
+      <button
+        onClick={() => {
+          setSelectedColor("red");
+        }}
+      >
+        Red
+      </button>
+      <button
+        onClick={() => {
+          setSelectedColor("blue");
+        }}
+      >
+        Blue
+      </button>
+      <button
+        onClick={() => {
+          setSelectedColor("green");
+        }}
+      >
+        Green
+      </button>
     </>
   );
 }

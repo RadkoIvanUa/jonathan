@@ -8,7 +8,7 @@ import "./header.css";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 
-export default function Header({ className }) {
+export default function Header({ className, color }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuClick = () => {
@@ -93,7 +93,6 @@ export default function Header({ className }) {
                 className="header__nav-link"
                 spy={true}
                 to={"portfolio"}
-                offset={-200}
               >
                 Portfolio
               </Link>
@@ -110,7 +109,6 @@ export default function Header({ className }) {
                 className="header__nav-link"
                 spy={true}
                 to={"client"}
-                offset={-250}
               >
                 Client
               </Link>
@@ -127,7 +125,6 @@ export default function Header({ className }) {
                 className="header__nav-link"
                 spy={true}
                 to={"contact"}
-                offset={-340}
               >
                 Contact
               </Link>

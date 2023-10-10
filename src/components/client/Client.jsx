@@ -37,9 +37,9 @@ const breakpoints = {
 
 export default function Client() {
   return (
-    <section className="client__section section">
+    <section className="client__section section" id="client">
       <div className="container">
-        <div id="client">
+        <div>
           <motion.div
             initial={{ opacity: 0, y: 200 }}
             whileInView={{ opacity: 1, y: 0 }}

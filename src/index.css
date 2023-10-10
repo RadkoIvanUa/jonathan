@@ -11,30 +11,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-  /*_________COLOR SCHEME________*/
-
-  /* iris-color*/
-  /* --primary-brand-color: #04b4e0; */
-  --primary-brand-color: #de0000;
-  /* ocean-color */
-  --pressed-color: #404bbf;
-  /* navy-blue-color */
-  --dark-color: #2e2f42;
-  /* navy-blue-modal */
-  --backdrop-color: rgba(46, 47, 66, 0.4);
-  /* green-color */
-  --success-color: #31d0aa;
-  /* slate-color */
-  --text-color: #434455;
-  /* light-text-color */
-  --subtle-text-color: #8e8f99;
-  /*cornflower-color*/
-  --accent-color: #e7e9fc;
-  /* cloud-color */
-  --light-color: #f4f4fd;
-  /* clean */
-  --clean-color: #ffffff;
 }
 
 html {

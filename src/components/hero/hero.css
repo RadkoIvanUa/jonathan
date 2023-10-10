@@ -5,7 +5,7 @@
       rgba(38, 40, 43, 0.72),
       rgba(38, 40, 43, 0.72)
     ),
-    url(../../img/hero/hero.jpg);
+    url(../../img/hero/hero_mobile.jpg);
 
   background-position: center;
   background-size: cover;
@@ -119,6 +119,11 @@
 @media (min-width: 768px) {
   .hero {
     padding: 0;
+    background-image: linear-gradient(
+        rgba(38, 40, 43, 0.72),
+        rgba(38, 40, 43, 0.72)
+      ),
+      url(../../img/hero/hero.jpg);
   }
 
   .hero > .container {

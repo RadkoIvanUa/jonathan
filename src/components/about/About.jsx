@@ -2,13 +2,6 @@ import "./about.css";
 import aboutImg from "../../img/about/about_photo.jpg";
 import { motion } from "framer-motion";
 
-import {
-  BsFacebook,
-  BsDribbble,
-  BsLinkedin,
-  BsInstagram,
-} from "react-icons/bs";
-import { useEffect, useState } from "react";
 import Counter from "../counter/Counter";
 
 export default function About() {
