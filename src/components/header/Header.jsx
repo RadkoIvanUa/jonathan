@@ -127,6 +127,7 @@ export default function Header({ className }) {
                 className="header__nav-link"
                 spy={true}
                 to={"contact"}
+                offset={-220}
               >
                 Contact
               </Link>
