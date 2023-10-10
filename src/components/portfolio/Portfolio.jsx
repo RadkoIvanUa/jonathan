@@ -48,7 +48,7 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <section className="portfolio__section section" id="portfolio">
+    <section className="portfolio__section section">
       <div className="container">
         <motion.h3
           initial={{ opacity: 0, y: 200 }}
@@ -59,7 +59,7 @@ export default function Portfolio() {
         >
           <span>Our</span> Works
         </motion.h3>
-        <div>
+        <div id="portfolio">
           <div className="wrapper">
             <motion.nav
               initial={{ opacity: 0, y: 200 }}

@@ -93,6 +93,7 @@ export default function Header({ className }) {
                 className="header__nav-link"
                 spy={true}
                 to={"portfolio"}
+                offset={-200}
               >
                 Portfolio
               </Link>
@@ -109,7 +110,7 @@ export default function Header({ className }) {
                 className="header__nav-link"
                 spy={true}
                 to={"client"}
-                offset={-130}
+                offset={-200}
               >
                 Client
               </Link>
@@ -125,7 +126,6 @@ export default function Header({ className }) {
                 activeClass="active"
                 className="header__nav-link"
                 spy={true}
-                offset={-210}
                 to={"contact"}
               >
                 Contact
