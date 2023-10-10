@@ -49,6 +49,30 @@ h1 {
   color: var(--primary-brand-color);
 }
 
+.about__experience {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.about__experience div {
+  text-align: center;
+  flex-basis: calc((100% - 10px) / 2);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  border-radius: 5px;
+}
+.about__experience div p:nth-child(1) {
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--primary-brand-color);
+}
+
 @media (min-width: 768px) {
   .about__img {
     width: 100%;
@@ -56,6 +80,10 @@ h1 {
 
   .about__icons-wrapper {
     justify-content: flex-end;
+  }
+
+  .about__experience div {
+    flex-basis: calc((100% - 30px) / 4);
   }
 }
 

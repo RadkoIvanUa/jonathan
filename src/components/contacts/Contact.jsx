@@ -2,7 +2,7 @@ import "./contact.css";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import emailjs from "@emailjs/browser";
@@ -11,6 +11,14 @@ import { TextField } from "@mui/material";
 import { ThreeDots } from "react-loader-spinner";
 
 import { motion } from "framer-motion";
+import {
+  BsDribbble,
+  BsFacebook,
+  BsInstagram,
+  BsLinkedin,
+  BsFillTelephoneFill,
+  BsMailbox2,
+} from "react-icons/bs";
 
 export default function Contact() {
   const [isSending, setIsSending] = useState(false);
@@ -83,8 +91,15 @@ export default function Contact() {
               I'm always open to discussing product design work or partnerships.
             </p>
             <div className="contact__contacts">
-              <a href="tel:+14251234563">+1 (425) 123-45-63</a>
-              <a href="mailto:example@mail.ua">example@mail.ua</a>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <BsFillTelephoneFill size={25} />
+                <a href="tel:+14251234563">+1 (425) 123-45-63</a>
+              </div>
+
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <BsMailbox2 size={25} />
+                <a href="mailto:example@mail.ua">example@mail.ua</a>
+              </div>
             </div>
           </motion.div>
 

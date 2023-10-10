@@ -37,7 +37,7 @@ const breakpoints = {
 
 export default function Client() {
   return (
-    <section className="client__section section" id="client">
+    <section className="client__section section">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 200 }}
@@ -65,6 +65,7 @@ export default function Client() {
               delay: 3500,
               disableOnInteraction: false,
             }}
+            id="client"
           >
             <SwiperSlide
               style={swiperSlideStyle}

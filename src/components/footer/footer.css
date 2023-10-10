@@ -1,11 +1,9 @@
 .footer__wrapper {
   display: flex;
-  /* flex-direction: column;
-  gap: 25px;
-  text-align: center; */
-
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
   align-items: center;
-  justify-content: space-between;
 }
 
 .footer__section {
@@ -14,5 +12,9 @@
 }
 
 .footer__section {
-  padding: 10px 0 10px 0;
+  padding: 20px 0 20px 0;
+}
+
+.footer__copyright div:not(:last-child) {
+  margin-bottom: 20px;
 }

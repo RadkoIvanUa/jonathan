@@ -8,6 +8,8 @@ import {
   BsLinkedin,
   BsInstagram,
 } from "react-icons/bs";
+import { useEffect, useState } from "react";
+import Counter from "../counter/Counter";
 
 export default function About() {
   return (
@@ -49,43 +51,39 @@ export default function About() {
               emotions.
             </p>
           </div>
-          <div className="about__icons-wrapper">
-            <motion.a
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ ease: "easeOut", duration: 0.8, delay: 0.5 }}
-              href="https://dribbble.com/"
-            >
-              <BsDribbble size={20} />
-            </motion.a>
-            <motion.a
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ ease: "easeOut", duration: 0.8, delay: 0.6 }}
-              href="https://www.facebook.com/"
-            >
-              <BsFacebook size={20} />
-            </motion.a>
-            <motion.a
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ ease: "easeOut", duration: 0.8, delay: 0.7 }}
-              href="https://www.linkedin.com/"
-            >
-              <BsLinkedin size={20} />
-            </motion.a>
-            <motion.a
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ ease: "easeOut", duration: 0.8, delay: 0.8 }}
-              href="https://www.instagram.com/"
-            >
-              <BsInstagram size={20} />
-            </motion.a>
+        </motion.div>
+      </div>
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ ease: [0.4, 0, 0.2, 1], duration: 1, delay: 0.5 }}
+          className="about__experience"
+        >
+          <div>
+            <p>
+              <Counter value={10} />+
+            </p>
+            <p>Years Experiance</p>
+          </div>
+          <div>
+            <p>
+              <Counter value={250} />+
+            </p>
+            <p>Happy Clients</p>
+          </div>
+          <div>
+            <p>
+              <Counter value={350} />+
+            </p>
+            <p>Projects Done</p>
+          </div>
+          <div>
+            <p>
+              <Counter value={37} /> +
+            </p>
+            <p>Get Awards</p>
           </div>
         </motion.div>
       </div>

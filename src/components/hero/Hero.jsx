@@ -3,7 +3,7 @@ import "./hero.css";
 
 import { SlMouse } from "react-icons/sl";
 import { Link } from "react-scroll";
-import { isMobile } from "react-device-detect";
+import { isDesktop, isTablet } from "react-device-detect";
 import { motion } from "framer-motion";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
@@ -26,16 +26,16 @@ export default function Hero() {
             exit={{ opacity: 0 }}
             viewport={{ once: true }}
             transition={{ ease: [0.4, 0, 0.2, 1], duration: 1.5 }}
+            style={{
+              margin: "auto 0",
+            }}
           >
             <p className="hero__text">Welcome</p>
             <h1 className="hero__title">
               I`m a {text}
               <Cursor cursorColor="white" />
             </h1>
-            <p className="hero__subtitle">
-              Loremus ipsum dolor sit amet consectetur adipisicing elit,
-              nostrum!
-            </p>
+            <p className="hero__subtitle">based in Los Angeles, California.</p>
             <button className="hero__btn">
               <a
                 href="public\download__sample\download_sample.txt"
@@ -55,7 +55,7 @@ export default function Hero() {
           duration={500}
         >
           <motion.button
-            animate={{ y: [10, 0, 10], x: [-30] }}
+            animate={{ y: [10, 0, 10], x: [isTablet || isDesktop ? -30 : 0] }}
             transition={{
               duration: 1,
 
@@ -67,7 +67,7 @@ export default function Hero() {
             type="button"
           >
             <SlMouse
-              size={windowSize.current[0] < 768 ? 40 : 60}
+              size={windowSize.current[0] < 768 ? 50 : 60}
               color="white"
             />
           </motion.button>

@@ -5,17 +5,23 @@
       rgba(38, 40, 43, 0.72),
       rgba(38, 40, 43, 0.72)
     ),
-    url(../../img/hero/hero_mobile.jpg);
+    url(../../img/hero/hero.jpg);
+
   background-position: center;
   background-size: cover;
   padding: 100px 0;
-  height: 432px;
+  height: 100vh;
   background-repeat: no-repeat;
   background-color: #8a8ea3;
   margin: 0 auto;
   text-align: center;
 
   position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero__text {
@@ -108,18 +114,10 @@
   display: none;
   border: none;
   background-color: transparent;
-  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .hero {
-    background-image: linear-gradient(
-        rgba(38, 40, 43, 0.72),
-        rgba(38, 40, 43, 0.72)
-      ),
-      url(../../img/hero/hero.jpg);
-    height: 100vh;
-
     padding: 0;
   }
 
@@ -156,18 +154,11 @@
   .hero__scroll {
     display: block;
     position: absolute;
-    bottom: 60px;
+    bottom: 90px;
     left: 50%;
-    transform: translateX(-50%);
   }
 }
 
-@media (min-width: 768px) {
-  .hero__scroll {
-    bottom: 90px;
-    cursor: pointer;
-  }
-}
 @media (min-width: 1280px) {
   .hero__scroll {
     bottom: 40px;

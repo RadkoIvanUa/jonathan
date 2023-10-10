@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+.services__list {
+  margin-bottom: 10px;
+}
+
 .services__list-item {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;

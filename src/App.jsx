@@ -56,20 +56,21 @@ function App() {
         <Hero />
         <About />
         <Services />
+
         <Portfolio />
         <Client />
         <Contact />
-        <Footer />
-        <LoadingPage isVisible={isLoading} />
-
-        <ToastContainer style={{ zIndex: 1000000 }} />
       </main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
       <div className={upScroll ? "up__scroll show" : "up__scroll hidden"}>
         <a href="#home">
-          <TbSquareRoundedArrowUpFilled size={50} className="up__scroll-icon" />
+          <TbSquareRoundedArrowUpFilled size={40} className="up__scroll-icon" />
         </a>
       </div>
+      <LoadingPage isVisible={isLoading} />
+      <ToastContainer style={{ zIndex: 1000000 }} />
     </>
   );
 }
