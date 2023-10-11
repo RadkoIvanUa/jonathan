@@ -1,6 +1,4 @@
 .header {
-  color: #000000;
-
   background-color: #fff;
   position: fixed;
   z-index: 10000;
@@ -10,19 +8,14 @@
   transition: all 0.5s ease-in-out;
 }
 
-.header.stickyadd .header__nav-link {
-  background-image: linear-gradient(
-    to right,
-    var(--primary-brand-color),
-    var(--primary-brand-color) 50%,
-    #000000 50%
-  );
-}
-
 .header__nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.header__nav-item .active {
+  background-position: 0;
 }
 
 .header__nav-logo {
@@ -42,12 +35,7 @@
   font-weight: 500;
 
   padding: 20px 0;
-  background-image: linear-gradient(
-    to right,
-    var(--primary-brand-color),
-    var(--primary-brand-color) 50%,
-    #ffffff 50%
-  );
+
   background-size: 200% 100%;
   background-position: -100%;
   display: inline-block;
@@ -125,23 +113,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .header__nav-link:before {
-    content: "";
-    background: var(--primary-brand-color);
-    display: block;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    transition: all 0.3s ease-in-out;
-  }
-
   .header__nav-link:hover {
     background-position: 0;
-  }
-
-  .header__nav-link:hover::before {
-    width: 100%;
   }
 }

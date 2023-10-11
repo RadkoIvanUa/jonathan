@@ -1,10 +1,11 @@
 import "./about.css";
 import aboutImg from "../../img/about/about_photo.jpg";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
 import Counter from "../counter/Counter";
 
-export default function About() {
+export default function About({ selectedColor }) {
   return (
     <section className="section about" id="about">
       <div className="container">
@@ -27,7 +28,7 @@ export default function About() {
             <span>About</span> Me
           </h2>
           <h3 className="about__subtitle">
-            Hello! <span>I`m Jonathan</span>
+            Hello! <span style={{ color: selectedColor }}>I`m Jonathan</span>
           </h3>
           <div className="about__text section__text">
             <p>
@@ -55,25 +56,25 @@ export default function About() {
           className="about__experience"
         >
           <div>
-            <p>
+            <p style={{ color: selectedColor }}>
               <Counter value={10} />+
             </p>
             <p>Years Experiance</p>
           </div>
           <div>
-            <p>
+            <p style={{ color: selectedColor }}>
               <Counter value={250} />+
             </p>
             <p>Happy Clients</p>
           </div>
           <div>
-            <p>
+            <p style={{ color: selectedColor }}>
               <Counter value={350} />+
             </p>
             <p>Projects Done</p>
           </div>
           <div>
-            <p>
+            <p style={{ color: selectedColor }}>
               <Counter value={37} /> +
             </p>
             <p>Get Awards</p>
@@ -83,3 +84,7 @@ export default function About() {
     </section>
   );
 }
+
+About.propTypes = {
+  selectedColor: PropTypes.string,
+};

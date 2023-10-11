@@ -12,9 +12,15 @@
 }
 
 .footer__section {
-  padding: 20px 0 20px 0;
+  padding: 50px 0 50px 0;
 }
 
 .footer__copyright div:not(:last-child) {
   margin-bottom: 20px;
+}
+
+@media (min-width: 1200px) {
+  .footer__section {
+    padding: 100px 0 100px 0;
+  }
 }

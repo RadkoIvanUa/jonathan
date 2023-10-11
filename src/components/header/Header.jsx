@@ -8,17 +8,56 @@ import "./header.css";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 
-export default function Header({ className, color }) {
+export default function Header({ className, selectedColor }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const [homeActive, setHomeActive] = useState(true);
+  const [aboutActive, setAboutActive] = useState(false);
+  const [servicesActive, setSevicesActive] = useState(false);
+  const [portfolioActive, setPortfolioActive] = useState(false);
+  const [clientActive, setClientActive] = useState(false);
+  const [contactActive, setContactActive] = useState(false);
+
+  const [isHoveredHome, setIsHoveredHome] = useState(false);
+  const [isHoveredAbout, setIsHoveredAbout] = useState(false);
+  const [isHoveredServices, setIsHoveredServices] = useState(false);
+  const [isHoveredPortfolio, setIsHoveredPortfolio] = useState(false);
+  const [isHoveredClient, setIsHoveredClient] = useState(false);
+  const [isHoveredContact, setIsHoveredContact] = useState(false);
 
   const iconAnimation = useSpring({
     transform: `rotate(${isMenuOpen ? 90 : 0}deg)`,
     config: { duration: 250 },
   });
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const headerStyle = {
+    backgroundImage: `linear-gradient(to right, ${selectedColor}, ${selectedColor} 50%, #000000 50%)`,
+  };
+
+  const mobileNavLinkStyle = {
+    color: `${selectedColor}`,
+  };
+
+  const defaultHeaderStyle = {
+    color: "#000000",
+    backgroundImage: `linear-gradient(to right, ${selectedColor}, ${selectedColor} 50%, #ffffff 50%)`,
+  };
+
+  const headerNavLinkBeforeStyle = {
+    content: '""',
+    background: `${selectedColor}`,
+    display: "block",
+    position: "absolute",
+    bottom: "-1px",
+    left: "0",
+    width: 0,
+    height: "3px",
+    transition: "all 0.3s ease-in-out",
+  };
 
   return (
     <div className={className}>
@@ -45,8 +84,21 @@ export default function Header({ className, color }) {
                 to={"hero"}
                 activeClass="active"
                 spy={true}
+                style={
+                  className === "header stickyadd"
+                    ? headerStyle
+                    : defaultHeaderStyle
+                }
+                onMouseEnter={() => setIsHoveredHome(true)}
+                onMouseLeave={() => setIsHoveredHome(false)}
               >
                 Home
+                <span
+                  style={{
+                    ...headerNavLinkBeforeStyle,
+                    width: isHoveredHome ? "100%" : "0",
+                  }}
+                ></span>
               </Link>
             </motion.li>
             <motion.li
@@ -61,8 +113,21 @@ export default function Header({ className, color }) {
                 to={"about"}
                 spy={true}
                 activeClass="active"
+                style={
+                  className === "header stickyadd"
+                    ? headerStyle
+                    : defaultHeaderStyle
+                }
+                onMouseEnter={() => setIsHoveredAbout(true)}
+                onMouseLeave={() => setIsHoveredAbout(false)}
               >
                 About
+                <span
+                  style={{
+                    ...headerNavLinkBeforeStyle,
+                    width: isHoveredAbout ? "100%" : "0",
+                  }}
+                ></span>
               </Link>
             </motion.li>
             <motion.li
@@ -77,8 +142,21 @@ export default function Header({ className, color }) {
                 className="header__nav-link"
                 to={"services"}
                 spy={true}
+                style={
+                  className === "header stickyadd"
+                    ? headerStyle
+                    : defaultHeaderStyle
+                }
+                onMouseEnter={() => setIsHoveredServices(true)}
+                onMouseLeave={() => setIsHoveredServices(false)}
               >
                 Services
+                <span
+                  style={{
+                    ...headerNavLinkBeforeStyle,
+                    width: isHoveredServices ? "100%" : "0",
+                  }}
+                ></span>
               </Link>
             </motion.li>
             <motion.li
@@ -93,8 +171,21 @@ export default function Header({ className, color }) {
                 className="header__nav-link"
                 spy={true}
                 to={"portfolio"}
+                style={
+                  className === "header stickyadd"
+                    ? headerStyle
+                    : defaultHeaderStyle
+                }
+                onMouseEnter={() => setIsHoveredPortfolio(true)}
+                onMouseLeave={() => setIsHoveredPortfolio(false)}
               >
                 Portfolio
+                <span
+                  style={{
+                    ...headerNavLinkBeforeStyle,
+                    width: isHoveredPortfolio ? "100%" : "0",
+                  }}
+                ></span>
               </Link>
             </motion.li>
             <motion.li
@@ -109,8 +200,21 @@ export default function Header({ className, color }) {
                 className="header__nav-link"
                 spy={true}
                 to={"client"}
+                style={
+                  className === "header stickyadd"
+                    ? headerStyle
+                    : defaultHeaderStyle
+                }
+                onMouseEnter={() => setIsHoveredClient(true)}
+                onMouseLeave={() => setIsHoveredClient(false)}
               >
                 Client
+                <span
+                  style={{
+                    ...headerNavLinkBeforeStyle,
+                    width: isHoveredClient ? "100%" : "0",
+                  }}
+                ></span>
               </Link>
             </motion.li>
             <motion.li
@@ -125,8 +229,21 @@ export default function Header({ className, color }) {
                 className="header__nav-link"
                 spy={true}
                 to={"contact"}
+                style={
+                  className === "header stickyadd"
+                    ? headerStyle
+                    : defaultHeaderStyle
+                }
+                onMouseEnter={() => setIsHoveredContact(true)}
+                onMouseLeave={() => setIsHoveredContact(false)}
               >
                 Contact
+                <span
+                  style={{
+                    ...headerNavLinkBeforeStyle,
+                    width: isHoveredContact ? "100%" : "0",
+                  }}
+                ></span>
               </Link>
             </motion.li>
           </ul>
@@ -164,21 +281,34 @@ export default function Header({ className, color }) {
                 to={"hero"}
                 onClick={() => {
                   setIsMenuOpen(false);
+                  setHomeActive(true);
+                  setAboutActive(false);
+                  setSevicesActive(false);
+                  setPortfolioActive(false);
+                  setClientActive(false);
+                  setContactActive(false);
                 }}
+                style={homeActive ? mobileNavLinkStyle : null}
               >
                 Home
               </Link>
             </li>
             <li className="mobile__header-nav-item">
               <Link
-                className="mobile__header-nav-link"
-                to="section about"
-                activeClass="active"
-                spy={true}
-                offset={-40}
                 onClick={() => {
                   setIsMenuOpen(false);
+                  setHomeActive(false);
+                  setAboutActive(true);
+                  setSevicesActive(false);
+                  setPortfolioActive(false);
+                  setClientActive(false);
+                  setContactActive(false);
                 }}
+                className="mobile__header-nav-link"
+                to="section about"
+                spy={true}
+                offset={-40}
+                style={aboutActive ? mobileNavLinkStyle : null}
               >
                 About
               </Link>
@@ -187,12 +317,18 @@ export default function Header({ className, color }) {
               <Link
                 className="mobile__header-nav-link"
                 to="services"
-                activeClass="active"
                 spy={true}
                 offset={-40}
                 onClick={() => {
                   setIsMenuOpen(false);
+                  setHomeActive(false);
+                  setAboutActive(false);
+                  setSevicesActive(true);
+                  setPortfolioActive(false);
+                  setClientActive(false);
+                  setContactActive(false);
                 }}
+                style={servicesActive ? mobileNavLinkStyle : null}
               >
                 Services
               </Link>
@@ -201,12 +337,18 @@ export default function Header({ className, color }) {
               <Link
                 className="mobile__header-nav-link"
                 to="portfolio"
-                activeClass="active"
                 spy={true}
                 offset={-40}
                 onClick={() => {
                   setIsMenuOpen(false);
+                  setHomeActive(false);
+                  setAboutActive(false);
+                  setSevicesActive(false);
+                  setPortfolioActive(true);
+                  setClientActive(false);
+                  setContactActive(false);
                 }}
+                style={portfolioActive ? mobileNavLinkStyle : null}
               >
                 Portfolio
               </Link>
@@ -215,12 +357,18 @@ export default function Header({ className, color }) {
               <Link
                 className="mobile__header-nav-link"
                 to="client"
-                activeClass="active"
                 spy={true}
                 offset={-40}
                 onClick={() => {
                   setIsMenuOpen(false);
+                  setHomeActive(false);
+                  setAboutActive(false);
+                  setSevicesActive(false);
+                  setPortfolioActive(false);
+                  setClientActive(true);
+                  setContactActive(false);
                 }}
+                style={clientActive ? mobileNavLinkStyle : null}
               >
                 Client
               </Link>
@@ -229,12 +377,18 @@ export default function Header({ className, color }) {
               <Link
                 className="mobile__header-nav-link"
                 to="contact"
-                activeClass="active"
                 spy={true}
                 offset={-40}
                 onClick={() => {
                   setIsMenuOpen(false);
+                  setHomeActive(false);
+                  setAboutActive(false);
+                  setSevicesActive(false);
+                  setPortfolioActive(false);
+                  setClientActive(false);
+                  setContactActive(true);
                 }}
+                style={contactActive ? mobileNavLinkStyle : null}
               >
                 Contact
               </Link>
@@ -248,4 +402,5 @@ export default function Header({ className, color }) {
 
 Header.propTypes = {
   className: PropTypes.string,
+  selectedColor: PropTypes.string,
 };

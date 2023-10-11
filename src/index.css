@@ -58,20 +58,12 @@ img {
   line-height: 1.8;
 }
 
-.header__nav-item .active {
-  background-position: 0;
-}
-.mobile__header-nav-item .active {
-  color: var(--primary-brand-color);
-}
-
 .up__scroll {
   position: fixed;
   z-index: 9000;
   bottom: 15px;
   right: 15px;
 
-  color: var(--primary-brand-color);
   opacity: 0.5;
 
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,13 +1,12 @@
 import "./portfolio.css";
 import { useEffect, useState } from "react";
 import galery_filter from "../../helpers/galery_filter";
-
 import portfolioItems from "../../portfolio_items";
 import ModalWindow from "../modal/Modal";
-
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
-export default function Portfolio() {
+export default function Portfolio({ selectedColor }) {
   const [largeImageURL, setLargeImageURL] = useState();
   const [description, setDescription] = useState();
   const [client, setClient] = useState();
@@ -16,6 +15,27 @@ export default function Portfolio() {
   const [website, setWebsite] = useState();
   const [linkToVideo, setLinkToVideo] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // CATEGORY
+  const [isAllActive, setIsAllActive] = useState(true);
+  const [isWebActive, setIsWebActive] = useState(false);
+  const [isLogoActive, setIsLogoActive] = useState(false);
+  const [isPackagingActive, setIsPackagingActive] = useState(false);
+  const [isSocialActive, setIsSocialActive] = useState(false);
+  const [isPrintActive, setIsPrintActive] = useState(false);
+  const [isIllustrationActive, setIsIllustrationActive] = useState(false);
+
+  // hover
+
+  const [isAllHovered, setIsAllHovered] = useState(false);
+  const [isWebHovered, setIsWebHovered] = useState(false);
+  const [isLogoHovered, setIsLogoHovered] = useState(false);
+  const [isPackagingHovered, setIsPackagingHovered] = useState(false);
+  const [isSocialHovered, setIsSocialHovered] = useState(false);
+  const [isPrintHovered, setIsPrintHovered] = useState(false);
+  const [isIllustrationHovered, setIsIllustrationHovered] = useState(false);
+
+  // ------------------------
 
   const handleModalOpen = (e) => {
     const largeImageURL = e.target.dataset.src;
@@ -37,7 +57,6 @@ export default function Portfolio() {
     setCategory(category);
     setWebsite(website);
     setLinkToVideo(linkToVideo);
-
     setIsModalOpen(true);
   };
 
@@ -46,6 +65,16 @@ export default function Portfolio() {
   useEffect(() => {
     galery_filter();
   }, []);
+
+  const activeCategoryStyle = {
+    color: "#fff",
+    background: selectedColor,
+  };
+
+  const hoveredCategoryStyle = {
+    color: "#fff",
+    background: selectedColor,
+  };
 
   return (
     <section className="portfolio__section section" id="portfolio">
@@ -68,25 +97,200 @@ export default function Portfolio() {
               viewport={{ once: true }}
             >
               <div className="items">
-                <button className="item active" data-name="all">
+                <button
+                  onClick={() => {
+                    setIsAllActive(true);
+                    setIsWebActive(false);
+                    setIsLogoActive(false);
+                    setIsPackagingActive(false);
+                    setIsSocialActive(false);
+                    setIsPrintActive(false);
+                    setIsIllustrationActive(false);
+                  }}
+                  onMouseEnter={() => {
+                    setIsAllHovered(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsAllHovered(false);
+                  }}
+                  style={
+                    isAllActive
+                      ? activeCategoryStyle
+                      : isAllHovered
+                      ? hoveredCategoryStyle
+                      : null
+                  }
+                  className="item active"
+                  data-name="all"
+                >
                   All
                 </button>
-                <button className="item" data-name="web">
+                <button
+                  onClick={() => {
+                    setIsAllActive(false);
+                    setIsWebActive(true);
+                    setIsLogoActive(false);
+                    setIsPackagingActive(false);
+                    setIsSocialActive(false);
+                    setIsPrintActive(false);
+                    setIsIllustrationActive(false);
+                  }}
+                  onMouseEnter={() => {
+                    setIsWebHovered(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsWebHovered(false);
+                  }}
+                  style={
+                    isWebActive
+                      ? activeCategoryStyle
+                      : isWebHovered
+                      ? hoveredCategoryStyle
+                      : null
+                  }
+                  className="item"
+                  data-name="web"
+                >
                   Web
                 </button>
-                <button className="item" data-name="logo">
+                <button
+                  onClick={() => {
+                    setIsAllActive(false);
+                    setIsWebActive(false);
+                    setIsLogoActive(true);
+                    setIsPackagingActive(false);
+                    setIsSocialActive(false);
+                    setIsPrintActive(false);
+                    setIsIllustrationActive(false);
+                  }}
+                  onMouseEnter={() => {
+                    setIsLogoHovered(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsLogoHovered(false);
+                  }}
+                  style={
+                    isLogoActive
+                      ? activeCategoryStyle
+                      : isLogoHovered
+                      ? hoveredCategoryStyle
+                      : null
+                  }
+                  className="item"
+                  data-name="logo"
+                >
                   Logo
                 </button>
-                <button className="item" data-name="packaging">
+                <button
+                  onClick={() => {
+                    setIsAllActive(false);
+                    setIsWebActive(false);
+                    setIsLogoActive(false);
+                    setIsPackagingActive(true);
+                    setIsSocialActive(false);
+                    setIsPrintActive(false);
+                    setIsIllustrationActive(false);
+                  }}
+                  onMouseEnter={() => {
+                    setIsPackagingHovered(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsPackagingHovered(false);
+                  }}
+                  style={
+                    isPackagingActive
+                      ? activeCategoryStyle
+                      : isPackagingHovered
+                      ? hoveredCategoryStyle
+                      : null
+                  }
+                  className="item"
+                  data-name="packaging"
+                >
                   Packaging
                 </button>
-                <button className="item" data-name="social">
+                <button
+                  onClick={() => {
+                    setIsAllActive(false);
+                    setIsWebActive(false);
+                    setIsLogoActive(false);
+                    setIsPackagingActive(false);
+                    setIsSocialActive(true);
+                    setIsPrintActive(false);
+                    setIsIllustrationActive(false);
+                  }}
+                  onMouseEnter={() => {
+                    setIsSocialHovered(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsSocialHovered(false);
+                  }}
+                  style={
+                    isSocialActive
+                      ? activeCategoryStyle
+                      : isSocialHovered
+                      ? hoveredCategoryStyle
+                      : null
+                  }
+                  className="item"
+                  data-name="social"
+                >
                   Social
                 </button>
-                <button className="item" data-name="print">
+                <button
+                  onClick={() => {
+                    setIsAllActive(false);
+                    setIsWebActive(false);
+                    setIsLogoActive(false);
+                    setIsPackagingActive(false);
+                    setIsSocialActive(false);
+                    setIsPrintActive(true);
+                    setIsIllustrationActive(false);
+                  }}
+                  onMouseEnter={() => {
+                    setIsPrintHovered(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsPrintHovered(false);
+                  }}
+                  style={
+                    isPrintActive
+                      ? activeCategoryStyle
+                      : isPrintHovered
+                      ? hoveredCategoryStyle
+                      : null
+                  }
+                  className="item"
+                  data-name="print"
+                >
                   Print
                 </button>
-                <button className="item" data-name="illustration">
+                <button
+                  onClick={() => {
+                    setIsAllActive(false);
+                    setIsWebActive(false);
+                    setIsLogoActive(false);
+                    setIsPackagingActive(false);
+                    setIsSocialActive(false);
+                    setIsPrintActive(false);
+                    setIsIllustrationActive(true);
+                  }}
+                  onMouseEnter={() => {
+                    setIsIllustrationHovered(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsIllustrationHovered(false);
+                  }}
+                  style={
+                    isIllustrationActive
+                      ? activeCategoryStyle
+                      : isIllustrationHovered
+                      ? hoveredCategoryStyle
+                      : null
+                  }
+                  className="item"
+                  data-name="illustration"
+                >
                   Illustration
                 </button>
               </div>
@@ -172,6 +376,7 @@ export default function Portfolio() {
                 category={category}
                 website={website}
                 video={linkToVideo}
+                selectedColor={selectedColor}
               />
             </motion.ul>
           </div>
@@ -180,3 +385,7 @@ export default function Portfolio() {
     </section>
   );
 }
+
+Portfolio.propTypes = {
+  selectedColor: PropTypes.string,
+};

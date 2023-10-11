@@ -34,10 +34,6 @@
   margin-bottom: 10px;
 }
 
-.services__item-icon-svg {
-  color: var(--primary-brand-color);
-}
-
 .servises__item-title {
   font-size: 25px;
   font-weight: 500;
@@ -45,7 +41,6 @@
 }
 
 .services__item-text {
-  border-top: 2px solid var(--primary-brand-color);
   padding: 20px;
 }
 

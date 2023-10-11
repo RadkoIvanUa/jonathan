@@ -24,8 +24,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal__close:hover,
-.modal__close:active {
+.modal__close:hover {
   cursor: pointer;
   color: var(--primary-brand-color);
 }
@@ -49,7 +48,7 @@
 
 .modal__category {
   margin-bottom: 10px;
-  color: var(--subtle-text-color);
+  color: rgb(162, 162, 162);
 }
 
 .modal__title {
@@ -73,11 +72,6 @@
   text-decoration: underline;
   color: var(--primary-brand-color);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal__client-website:hover,
-.modal__client-website:active {
-  color: var(--pressed-color);
 }
 
 .modal__description {

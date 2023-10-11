@@ -10,8 +10,9 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
+import PropTypes from "prop-types";
 
 export default function ModalWindow({
   isModalOpen,
@@ -24,8 +25,10 @@ export default function ModalWindow({
   website,
 
   video,
+  selectedColor,
 }) {
   const [open, setOpen] = useState(false);
+  const [isModalCloseHovered, setIsModalCloseHovered] = useState(false);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -95,7 +98,11 @@ export default function ModalWindow({
                   <span>Client:</span> {client}
                 </h4>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <a href={website} className="modal__client-website">
+                  <a
+                    href={website}
+                    style={{ color: selectedColor }}
+                    className="modal__client-website"
+                  >
                     Visit client website
                   </a>
                   <CgWebsite size={22} color="black" />
@@ -112,8 +119,19 @@ export default function ModalWindow({
           size={40}
           className="modal__close"
           onClick={handleClose}
+          onMouseEnter={() => {
+            setIsModalCloseHovered(true);
+          }}
+          onMouseLeave={() => {
+            setIsModalCloseHovered(false);
+          }}
+          style={{ color: isModalCloseHovered ? selectedColor : null }}
         />
       ) : null}
     </div>
   );
 }
+
+Modal.propTypes = {
+  selectedColor: PropTypes.string,
+};

@@ -1,14 +1,24 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import PropTypes from "prop-types";
 import "./hero.css";
 
 import { SlMouse } from "react-icons/sl";
 import { Link } from "react-scroll";
 import { isDesktop, isTablet } from "react-device-detect";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
-export default function Hero() {
+export default function Hero({ selectedColor }) {
+  const [btnHovered, setBtnHovered] = useState(false);
   const windowSize = useRef([window.innerWidth]);
+
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "-250%"]);
 
   const [text] = useTypewriter({
     words: ["Jonathan", "Developer", "Designer", "Photographer"],
@@ -17,8 +27,8 @@ export default function Hero() {
   });
 
   return (
-    <>
-      <div className="hero">
+    <div ref={ref}>
+      <motion.div className="hero" style={{ y: backgroundY }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -28,6 +38,7 @@ export default function Hero() {
             transition={{ ease: [0.4, 0, 0.2, 1], duration: 1.5 }}
             style={{
               margin: "auto 0",
+              y: textY,
             }}
           >
             <p className="hero__text">Welcome</p>
@@ -36,7 +47,14 @@ export default function Hero() {
               <Cursor cursorColor="white" />
             </h1>
             <p className="hero__subtitle">based in Los Angeles, California.</p>
-            <button className="hero__btn">
+            <button
+              className="hero__btn"
+              onMouseEnter={() => setBtnHovered(true)}
+              onMouseLeave={() => setBtnHovered(false)}
+              style={
+                btnHovered ? { color: `${selectedColor}` } : { color: "white" }
+              }
+            >
               <a
                 href="public\download__sample\download_sample.txt"
                 download={true}
@@ -72,7 +90,12 @@ export default function Hero() {
             />
           </motion.button>
         </Link>
-      </div>
-    </>
+      </motion.div>
+    </div>
   );
 }
+
+Hero.propTypes = {
+  className: PropTypes.string,
+  selectedColor: PropTypes.string,
+};

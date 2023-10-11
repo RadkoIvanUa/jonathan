@@ -7,8 +7,9 @@ import {
 import "./footer.css";
 
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
-export default function Footer() {
+export default function Footer({ selectedColor }) {
   return (
     <div className="footer__section">
       <div className="container">
@@ -23,7 +24,7 @@ export default function Footer() {
             <div>
               <p>
                 <span>Copyright © 2023</span>{" "}
-                <a href="#" style={{ color: "var(--primary-brand-color)" }}>
+                <a href="#" style={{ color: selectedColor }}>
                   Jonathan
                 </a>
               </p>
@@ -31,7 +32,7 @@ export default function Footer() {
             <div>
               <p>
                 <span>Designed by</span>{" "}
-                <a href="#" style={{ color: "var(--primary-brand-color)" }}>
+                <a href="#" style={{ color: selectedColor }}>
                   ScriptSculptor
                 </a>
               </p>
@@ -83,3 +84,7 @@ export default function Footer() {
     </div>
   );
 }
+
+Footer.propTypes = {
+  selectedColor: PropTypes.string,
+};

@@ -9,7 +9,6 @@
   margin-bottom: 20px;
 
   font-size: 18px;
-  color: var(--primary-brand-color);
 }
 .contact__form div {
   margin-bottom: 15px;
@@ -21,7 +20,7 @@
 
 .contact__form-btn {
   backface-visibility: hidden;
-  background: var(--primary-brand-color);
+
   border: 0;
   border-radius: 0.375rem;
   box-sizing: border-box;
@@ -47,6 +46,10 @@
   width: 150px;
   margin: 0 auto;
   text-align: center;
+}
+
+.contact__form-btn:hover {
+  transform: scale(1.05);
 }
 
 .contact__form-btn:focus {

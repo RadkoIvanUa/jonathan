@@ -1,49 +1,42 @@
-import { Puff } from "react-loader-spinner";
-import { motion, AnimatePresence } from "framer-motion";
-import PropTypes from "prop-types";
+import { MutatingDots } from "react-loader-spinner";
+import { motion } from "framer-motion";
 
-export default function LoadingPage({ isVisible }) {
+export default function LoadingPage() {
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 0, height: 0 }}
-          transition={{ ease: [0.4, 0, 0.2, 1], duration: 1, delay: 0.3 }}
-          style={{
-            display: "flex",
-            alignItems: "center",
+    <motion.div
+      exit={{
+        y: "-100vh",
+        opacity: 0,
+      }}
+      transition={{ ease: [0.4, 0, 0.2, 1], duration: 1.5 }}
+      style={{
+        display: "flex",
+        alignItems: "center",
 
-            justifyContent: "center",
-            backgroundColor: "black",
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            zIndex: 10000000,
-          }}
-        >
-          <motion.div
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 0, scale: 0 }}
-            transition={{ ease: [0.4, 0, 0.2, 1], duration: 1, delay: 0.3 }}
-          >
-            <Puff
-              height="150"
-              width="150"
-              radius={1}
-              color="white"
-              ariaLabel="puff-loading"
-              visible={true}
-            />
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+        justifyContent: "center",
+        backgroundColor: "black",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        zIndex: 1000000000,
+      }}
+    >
+      <motion.div
+        exit={{ opacity: 0 }}
+        transition={{ ease: [0.4, 0, 0.2, 1], duration: 0.5 }}
+      >
+        <MutatingDots
+          height="100"
+          width="100"
+          color="#FFF"
+          secondaryColor="#FFF"
+          radius="12.5"
+          ariaLabel="mutating-dots-loading"
+          visible={true}
+        />
+      </motion.div>
+    </motion.div>
   );
 }
-
-LoadingPage.propTypes = {
-  isVisible: PropTypes.bool.isRequired,
-};

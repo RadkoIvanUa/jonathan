@@ -9,6 +9,7 @@
 
   background-position: center;
   background-size: cover;
+  /* background-attachment: fixed; */
   padding: 100px 0;
   height: 100vh;
   background-repeat: no-repeat;
@@ -27,6 +28,8 @@
 .hero__text {
   font-size: 25px;
   margin-bottom: 10px;
+
+  position: relative;
 }
 
 .hero__title {
@@ -58,10 +61,6 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-}
-
-.hero__btn:hover {
-  color: var(--primary-brand-color);
 }
 
 .hero__btn::after,

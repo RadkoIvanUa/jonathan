@@ -39,11 +39,6 @@ nav .items span {
   background-color: transparent;
   border: none;
 }
-.items button.active,
-.items button:hover {
-  color: #fff;
-  background: var(--primary-brand-color);
-}
 
 .gallery {
   margin-top: 30px;

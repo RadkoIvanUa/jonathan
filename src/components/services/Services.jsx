@@ -7,8 +7,9 @@ import { TbSocial } from "react-icons/tb";
 import { FiPrinter } from "react-icons/fi";
 import { AiOutlinePicture } from "react-icons/ai";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
-export default function Services() {
+export default function Services({ selectedColor }) {
   return (
     <section className="services__section section" id="services">
       <div className="container">
@@ -35,60 +36,78 @@ export default function Services() {
         >
           <li className="services__list-item">
             <div className="services__item-icon">
-              <CgWebsite size={60} className="services__item-icon-svg" />
+              <CgWebsite size={60} color={selectedColor} />
             </div>
             <h3 className="servises__item-title">Web</h3>
-            <p className="services__item-text section__text">
+            <p
+              className="services__item-text section__text"
+              style={{ borderTop: `2px solid ${selectedColor}` }}
+            >
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
           </li>
           <li className="services__list-item">
             <div className="services__item-icon">
-              <BiLogo500Px size={60} className="services__item-icon-svg" />
+              <BiLogo500Px size={60} color={selectedColor} />
             </div>
             <h3 className="servises__item-title">Logo</h3>
-            <p className="services__item-text section__text">
+            <p
+              className="services__item-text section__text"
+              style={{ borderTop: `2px solid ${selectedColor}` }}
+            >
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
           </li>
           <li className="services__list-item">
             <div className="services__item-icon">
-              <GoPackage size={60} className="services__item-icon-svg" />
+              <GoPackage size={60} color={selectedColor} />
             </div>
             <h3 className="servises__item-title">Packaging</h3>
-            <p className="services__item-text section__text">
+            <p
+              className="services__item-text section__text"
+              style={{ borderTop: `2px solid ${selectedColor}` }}
+            >
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
           </li>
           <li className="services__list-item">
             <div className="services__item-icon">
-              <TbSocial size={60} className="services__item-icon-svg" />
+              <TbSocial size={60} color={selectedColor} />
             </div>
             <h3 className="servises__item-title">Social Media</h3>
-            <p className="services__item-text section__text">
+            <p
+              className="services__item-text section__text"
+              style={{ borderTop: `2px solid ${selectedColor}` }}
+            >
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
           </li>
           <li className="services__list-item">
             <div className="services__item-icon">
-              <FiPrinter size={60} className="services__item-icon-svg" />
+              <FiPrinter size={60} color={selectedColor} />
             </div>
             <h3 className="servises__item-title">Print Design</h3>
-            <p className="services__item-text section__text">
+            <p
+              className="services__item-text section__text"
+              style={{ borderTop: `2px solid ${selectedColor}` }}
+            >
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
           </li>
           <li className="services__list-item">
             <div className="services__item-icon">
-              <AiOutlinePicture size={60} className="services__item-icon-svg" />
+              <AiOutlinePicture size={60} color={selectedColor} />
             </div>
             <h3 className="servises__item-title">Illustration</h3>
-            <p className="services__item-text section__text">
+            <p
+              className="services__item-text section__text"
+              style={{ borderTop: `2px solid ${selectedColor}` }}
+            >
               There are many variations of passages of but the majority have
               suffered alteration in some form.
             </p>
@@ -98,3 +117,6 @@ export default function Services() {
     </section>
   );
 }
+Services.propTypes = {
+  selectedColor: PropTypes.string,
+};

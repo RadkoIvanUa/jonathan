@@ -3,6 +3,7 @@ import "./contact.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
+import PropTypes from "prop-types";
 import "react-toastify/dist/ReactToastify.css";
 
 import emailjs from "@emailjs/browser";
@@ -11,16 +12,9 @@ import { TextField } from "@mui/material";
 import { ThreeDots } from "react-loader-spinner";
 
 import { motion } from "framer-motion";
-import {
-  BsDribbble,
-  BsFacebook,
-  BsInstagram,
-  BsLinkedin,
-  BsFillTelephoneFill,
-  BsMailbox2,
-} from "react-icons/bs";
+import { BsFillTelephoneFill, BsMailbox2 } from "react-icons/bs";
 
-export default function Contact() {
+export default function Contact({ selectedColor }) {
   const [isSending, setIsSending] = useState(false);
   const form = useRef();
 
@@ -90,7 +84,7 @@ export default function Contact() {
             <p className="contact__text">
               I'm always open to discussing product design work or partnerships.
             </p>
-            <div className="contact__contacts">
+            <div className="contact__contacts" style={{ color: selectedColor }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <BsFillTelephoneFill size={25} />
                 <a href="tel:+14251234563">+1 (425) 123-45-63</a>
@@ -159,6 +153,7 @@ export default function Contact() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                background: selectedColor,
               }}
               type="submit"
             >
@@ -183,3 +178,7 @@ export default function Contact() {
     </section>
   );
 }
+
+Contact.propTypes = {
+  selectedColor: PropTypes.string,
+};
