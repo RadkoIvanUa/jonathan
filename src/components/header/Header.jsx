@@ -113,6 +113,7 @@ export default function Header({ className, selectedColor }) {
                 to={"about"}
                 spy={true}
                 activeClass="active"
+                offset={5}
                 style={
                   className === "header stickyadd"
                     ? headerStyle
@@ -142,6 +143,7 @@ export default function Header({ className, selectedColor }) {
                 className="header__nav-link"
                 to={"services"}
                 spy={true}
+                offset={5}
                 style={
                   className === "header stickyadd"
                     ? headerStyle
@@ -170,6 +172,7 @@ export default function Header({ className, selectedColor }) {
                 activeClass="active"
                 className="header__nav-link"
                 spy={true}
+                offset={5}
                 to={"portfolio"}
                 style={
                   className === "header stickyadd"
@@ -199,6 +202,7 @@ export default function Header({ className, selectedColor }) {
                 activeClass="active"
                 className="header__nav-link"
                 spy={true}
+                offset={6}
                 to={"client"}
                 style={
                   className === "header stickyadd"
@@ -228,6 +232,7 @@ export default function Header({ className, selectedColor }) {
                 activeClass="active"
                 className="header__nav-link"
                 spy={true}
+                offset={7}
                 to={"contact"}
                 style={
                   className === "header stickyadd"

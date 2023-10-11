@@ -5,20 +5,12 @@ import "./hero.css";
 import { SlMouse } from "react-icons/sl";
 import { Link } from "react-scroll";
 import { isDesktop, isTablet } from "react-device-detect";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 export default function Hero({ selectedColor }) {
   const [btnHovered, setBtnHovered] = useState(false);
   const windowSize = useRef([window.innerWidth]);
-
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "-250%"]);
 
   const [text] = useTypewriter({
     words: ["Jonathan", "Developer", "Designer", "Photographer"],
@@ -27,8 +19,8 @@ export default function Hero({ selectedColor }) {
   });
 
   return (
-    <div ref={ref}>
-      <motion.div className="hero" style={{ y: backgroundY }}>
+    <div>
+      <motion.div className="hero">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -38,7 +30,6 @@ export default function Hero({ selectedColor }) {
             transition={{ ease: [0.4, 0, 0.2, 1], duration: 1.5 }}
             style={{
               margin: "auto 0",
-              y: textY,
             }}
           >
             <p className="hero__text">Welcome</p>

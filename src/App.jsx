@@ -1,8 +1,6 @@
 import "../node_modules/modern-normalize/modern-normalize.css";
 import "./reset.css";
 
-import "./color/red.css";
-
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import { useEffect, useState, useRef } from "react";
