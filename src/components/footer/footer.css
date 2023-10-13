@@ -19,6 +19,11 @@
   margin-bottom: 20px;
 }
 
+@media (min-width: 820px) {
+  .footer__section {
+    padding: 75px 0 75px 0;
+  }
+}
 @media (min-width: 1980px) {
   .footer__section {
     padding: 100px 0 100px 0;

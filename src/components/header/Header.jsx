@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useSpring, animated } from "react-spring";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -10,20 +10,33 @@ import { motion } from "framer-motion";
 
 export default function Header({ className, selectedColor }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const [homeActive, setHomeActive] = useState(true);
   const [aboutActive, setAboutActive] = useState(false);
   const [servicesActive, setSevicesActive] = useState(false);
   const [portfolioActive, setPortfolioActive] = useState(false);
   const [clientActive, setClientActive] = useState(false);
   const [contactActive, setContactActive] = useState(false);
-
   const [isHoveredHome, setIsHoveredHome] = useState(false);
   const [isHoveredAbout, setIsHoveredAbout] = useState(false);
   const [isHoveredServices, setIsHoveredServices] = useState(false);
   const [isHoveredPortfolio, setIsHoveredPortfolio] = useState(false);
   const [isHoveredClient, setIsHoveredClient] = useState(false);
   const [isHoveredContact, setIsHoveredContact] = useState(false);
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+      console.log(screenWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const iconAnimation = useSpring({
     transform: `rotate(${isMenuOpen ? 90 : 0}deg)`,
@@ -113,7 +126,7 @@ export default function Header({ className, selectedColor }) {
                 to={"about"}
                 spy={true}
                 activeClass="active"
-                offset={5}
+                offset={screenWidth >= 1980 ? 0 : 5}
                 style={
                   className === "header stickyadd"
                     ? headerStyle
@@ -143,7 +156,7 @@ export default function Header({ className, selectedColor }) {
                 className="header__nav-link"
                 to={"services"}
                 spy={true}
-                offset={5}
+                offset={screenWidth >= 1980 ? 0 : 5}
                 style={
                   className === "header stickyadd"
                     ? headerStyle
@@ -172,7 +185,7 @@ export default function Header({ className, selectedColor }) {
                 activeClass="active"
                 className="header__nav-link"
                 spy={true}
-                offset={5}
+                offset={screenWidth >= 1980 ? 0 : 5}
                 to={"portfolio"}
                 style={
                   className === "header stickyadd"
@@ -202,7 +215,7 @@ export default function Header({ className, selectedColor }) {
                 activeClass="active"
                 className="header__nav-link"
                 spy={true}
-                offset={6}
+                offset={screenWidth >= 1980 ? 0 : 6}
                 to={"client"}
                 style={
                   className === "header stickyadd"
@@ -232,7 +245,7 @@ export default function Header({ className, selectedColor }) {
                 activeClass="active"
                 className="header__nav-link"
                 spy={true}
-                offset={7}
+                offset={screenWidth >= 1980 ? 0 : 6}
                 to={"contact"}
                 style={
                   className === "header stickyadd"

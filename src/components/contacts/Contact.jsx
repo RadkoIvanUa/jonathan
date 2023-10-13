@@ -118,6 +118,7 @@ export default function Contact({ selectedColor }) {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.name}
+              className="contact__name"
             />
 
             <TextField

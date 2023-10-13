@@ -12,26 +12,22 @@ import Client from "./components/client/Client";
 import Contact from "./components/contacts/Contact";
 
 import Footer from "./components/footer/Footer";
-import LoadingPage from "./components/loading_page/LoadingPage";
+
 import { ToastContainer } from "react-toastify";
 import { Link } from "react-scroll";
-import Color from "./components/color/Color";
-import { AnimatePresence } from "framer-motion";
+
+import Cursor from "./components/cursor/Cursor";
+import Settings from "./components/settings/Settings";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [upScroll, setUpScroll] = useState(false);
   const [selectedColor, setSelectedColor] = useState("rgb(1, 159, 159)");
+  const [colorForCursor, setColorForCursor] = useState("1, 159, 159");
+
+  const [cursor, setCursor] = useState(true);
 
   const windowSize = useRef([window.innerWidth]);
-
-  const handleScroll = () => {
-    setScroll(window.scrollY > 50);
-  };
-  const handleUpScroll = () => {
-    setUpScroll(window.scrollY > 400);
-  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -45,52 +41,60 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setIsLoading(true);
+    setColorForCursor(
+      selectedColor.replace(/^rgb\((\d+,\s*\d+,\s*\d+)\)$/, "$1")
+    );
+  }, [selectedColor]);
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
+  const handleScroll = () => {
+    setScroll(window.scrollY > 50);
+  };
+  const handleUpScroll = () => {
+    setUpScroll(window.scrollY > 400);
+  };
+
+  const cursorSwither = () => {
+    setCursor(!cursor);
+  };
 
   return (
     <>
-      <AnimatePresence>{isLoading && <LoadingPage />}</AnimatePresence>
-      <div>
-        <div id="home"></div>
-        <header>
-          <Header
-            className={scroll ? "header stickyadd" : "header"}
-            selectedColor={selectedColor}
+      {cursor && <Cursor colorForCursor={colorForCursor} />}
+
+      <div id="home"></div>
+      <header>
+        <Header
+          className={scroll ? "header stickyadd" : "header"}
+          selectedColor={selectedColor}
+        />
+      </header>
+      <main>
+        <Hero selectedColor={selectedColor} />
+        <About selectedColor={selectedColor} />
+        <Services selectedColor={selectedColor} />
+
+        <Portfolio selectedColor={selectedColor} />
+        <Client selectedColor={selectedColor} />
+        <Contact selectedColor={selectedColor} />
+      </main>
+      <footer>
+        <Footer selectedColor={selectedColor} />
+      </footer>
+      <div className={upScroll ? "up__scroll show" : "up__scroll hidden"}>
+        <Link className="header__nav-logo" to={"hero"} spy={true}>
+          <TbSquareRoundedArrowUpFilled
+            color={selectedColor}
+            size={40}
+            className="up__scroll-icon"
           />
-        </header>
-        <main>
-          <Hero selectedColor={selectedColor} />
-          <About selectedColor={selectedColor} />
-          <Services selectedColor={selectedColor} />
-
-          <Portfolio selectedColor={selectedColor} />
-          <Client selectedColor={selectedColor} />
-          <Contact selectedColor={selectedColor} />
-        </main>
-        <footer>
-          <Footer selectedColor={selectedColor} />
-        </footer>
-        <div className={upScroll ? "up__scroll show" : "up__scroll hidden"}>
-          <Link className="header__nav-logo" to={"hero"} spy={true}>
-            <TbSquareRoundedArrowUpFilled
-              color={selectedColor}
-              size={40}
-              className="up__scroll-icon"
-            />
-          </Link>
-        </div>
-
-        <ToastContainer style={{ zIndex: 1000000 }} />
-
-        {/* COlOR SELECTOR */}
-
-        <Color setSelectedColor={setSelectedColor} />
+        </Link>
       </div>
+      <ToastContainer style={{ zIndex: 1000000 }} />
+      {/* COlOR SELECTOR */}
+      <Settings
+        setSelectedColor={setSelectedColor}
+        cursorSwither={cursorSwither}
+      />
     </>
   );
 }

@@ -13,6 +13,7 @@ import Fade from "@mui/material/Fade";
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import PropTypes from "prop-types";
+import AnimatedCursor from "react-animated-cursor";
 
 export default function ModalWindow({
   isModalOpen,

@@ -27,7 +27,7 @@ export default function Hero({ selectedColor }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             viewport={{ once: true }}
-            transition={{ ease: [0.4, 0, 0.2, 1], duration: 1.5 }}
+            transition={{ ease: [0.4, 0, 0.2, 1], duration: 1.5, delay: 1.5 }}
             style={{
               margin: "auto 0",
             }}
