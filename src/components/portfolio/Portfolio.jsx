@@ -1,7 +1,7 @@
 import "./portfolio.css";
 import { useEffect, useState } from "react";
 import galery_filter from "../../helpers/galery_filter";
-import portfolioItems from "../../portfolio_items";
+import portfolioItems from "./portfolio_items";
 import ModalWindow from "../modal/Modal";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";

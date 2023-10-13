@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import "./hero.css";
-
 import { SlMouse } from "react-icons/sl";
 import { Link } from "react-scroll";
 import { isDesktop, isTablet } from "react-device-detect";

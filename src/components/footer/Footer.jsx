@@ -5,7 +5,6 @@ import {
   BsLinkedin,
 } from "react-icons/bs";
 import "./footer.css";
-
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 

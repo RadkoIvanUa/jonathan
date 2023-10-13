@@ -22,7 +22,6 @@ export default function Header({ className, selectedColor }) {
   const [isHoveredPortfolio, setIsHoveredPortfolio] = useState(false);
   const [isHoveredClient, setIsHoveredClient] = useState(false);
   const [isHoveredContact, setIsHoveredContact] = useState(false);
-
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -267,6 +266,7 @@ export default function Header({ className, selectedColor }) {
           </ul>
 
           {/* mobile  */}
+
           <animated.button
             style={{
               border: 0,

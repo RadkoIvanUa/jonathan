@@ -1,22 +1,33 @@
 import "./contact.css";
-
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
 import PropTypes from "prop-types";
 import "react-toastify/dist/ReactToastify.css";
-
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { TextField } from "@mui/material";
 import { ThreeDots } from "react-loader-spinner";
-
 import { motion } from "framer-motion";
 import { BsFillTelephoneFill, BsMailbox2 } from "react-icons/bs";
 
 export default function Contact({ selectedColor }) {
   const [isSending, setIsSending] = useState(false);
   const form = useRef();
+
+  const formStyle = {
+    ".MuiFormLabel-root.Mui-focused": {
+      color: `${selectedColor}`,
+    },
+
+    "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+      borderColor: `${selectedColor}`,
+    },
+    "& .MuiOutlinedInput-root.Mui-focused  .MuiOutlinedInput-notchedOutline": {
+      borderColor: `${selectedColor}`,
+      color: "white",
+    },
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -119,6 +130,7 @@ export default function Contact({ selectedColor }) {
               onBlur={formik.handleBlur}
               value={formik.values.name}
               className="contact__name"
+              sx={{ ...formStyle, marginBottom: "15px" }}
             />
 
             <TextField
@@ -133,6 +145,7 @@ export default function Contact({ selectedColor }) {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
+              sx={{ ...formStyle, marginBottom: "15px" }}
             />
 
             <TextField
@@ -145,6 +158,7 @@ export default function Contact({ selectedColor }) {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.message}
+              sx={{ ...formStyle, marginBottom: "15px" }}
             />
 
             <button

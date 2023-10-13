@@ -35,7 +35,6 @@ nav .items span {
   color: #000;
   border-radius: 20px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
   background-color: transparent;
   border: none;
 }
@@ -81,7 +80,6 @@ nav .items span {
   border-radius: 5px;
   overflow: hidden;
   position: relative;
-
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -89,7 +87,6 @@ nav .items span {
   display: block;
   height: 100%;
   width: 100%;
-
   object-fit: cover;
 }
 
@@ -128,13 +125,11 @@ nav .items span {
     opacity: 0;
     transform: translateY(100%);
     z-index: 1000;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 15px;
-
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 

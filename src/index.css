@@ -2,10 +2,8 @@
   font-family: Raleway, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color: rgba(0, 0, 0, 0.87);
   background-color: #ffffff;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,6 +18,10 @@ html {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h1 {
+  font-size: 100px;
 }
 
 img {
@@ -63,9 +65,7 @@ img {
   z-index: 9000;
   bottom: 15px;
   right: 15px;
-
   opacity: 0.5;
-
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .up__scroll-icon {

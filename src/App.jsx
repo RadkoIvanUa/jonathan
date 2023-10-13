@@ -1,30 +1,25 @@
 import "../node_modules/modern-normalize/modern-normalize.css";
 import "./reset.css";
-
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
-import { useEffect, useState, useRef } from "react";
 import About from "./components/about/About";
 import Services from "./components/services/Services";
 import Portfolio from "./components/portfolio/Portfolio";
-import { TbSquareRoundedArrowUpFilled } from "react-icons/tb";
 import Client from "./components/client/Client";
 import Contact from "./components/contacts/Contact";
-
 import Footer from "./components/footer/Footer";
-
-import { ToastContainer } from "react-toastify";
-import { Link } from "react-scroll";
-
 import Cursor from "./components/cursor/Cursor";
 import Settings from "./components/settings/Settings";
+import { ToastContainer } from "react-toastify";
+import { Link } from "react-scroll";
+import { TbSquareRoundedArrowUpFilled } from "react-icons/tb";
+import { useEffect, useState, useRef } from "react";
 
 function App() {
   const [scroll, setScroll] = useState(false);
   const [upScroll, setUpScroll] = useState(false);
   const [selectedColor, setSelectedColor] = useState("rgb(1, 159, 159)");
   const [colorForCursor, setColorForCursor] = useState("1, 159, 159");
-
   const [cursor, setCursor] = useState(true);
 
   const windowSize = useRef([window.innerWidth]);
@@ -49,6 +44,7 @@ function App() {
   const handleScroll = () => {
     setScroll(window.scrollY > 50);
   };
+
   const handleUpScroll = () => {
     setUpScroll(window.scrollY > 400);
   };
@@ -60,7 +56,6 @@ function App() {
   return (
     <>
       {cursor && <Cursor colorForCursor={colorForCursor} />}
-
       <div id="home"></div>
       <header>
         <Header
@@ -72,7 +67,6 @@ function App() {
         <Hero selectedColor={selectedColor} />
         <About selectedColor={selectedColor} />
         <Services selectedColor={selectedColor} />
-
         <Portfolio selectedColor={selectedColor} />
         <Client selectedColor={selectedColor} />
         <Contact selectedColor={selectedColor} />
@@ -90,7 +84,6 @@ function App() {
         </Link>
       </div>
       <ToastContainer style={{ zIndex: 1000000 }} />
-      {/* COlOR SELECTOR */}
       <Settings
         setSelectedColor={setSelectedColor}
         cursorSwither={cursorSwither}

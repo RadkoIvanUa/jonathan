@@ -1,12 +1,10 @@
 .hero {
   color: #fff;
-
   background-image: linear-gradient(
       rgba(38, 40, 43, 0.72),
       rgba(38, 40, 43, 0.72)
     ),
     url(../../img/hero/hero_mobile.jpg);
-
   background-position: center;
   background-size: cover;
   padding: 100px 0;
@@ -15,9 +13,7 @@
   background-color: #8a8ea3;
   margin: 0 auto;
   text-align: center;
-
   position: relative;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,7 +23,6 @@
 .hero__text {
   font-size: 25px;
   margin-bottom: 10px;
-
   position: relative;
 }
 
@@ -55,7 +50,6 @@
   z-index: 1;
   padding: 10px 20px;
   margin-bottom: 30px;
-
   white-space: nowrap;
   user-select: none;
   -webkit-user-select: none;

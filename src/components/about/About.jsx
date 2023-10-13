@@ -2,7 +2,6 @@ import "./about.css";
 import aboutImg from "../../img/about/about_photo.jpg";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-
 import Counter from "../counter/Counter";
 
 export default function About({ selectedColor }) {

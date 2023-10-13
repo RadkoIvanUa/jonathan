@@ -1,9 +1,9 @@
-import one from "./img/portfolio_img/1.jpg";
-import two from "./img/portfolio_img/2.jpg";
-import three from "./img/portfolio_img/3.jpg";
-import four from "./img/portfolio_img/4.jpg";
-import five from "./img/portfolio_img/5.jpg";
-import six from "./img/portfolio_img/6.jpg";
+import one from "../../img/portfolio_img/1.jpg";
+import two from "../../img/portfolio_img/2.jpg";
+import three from "../../img/portfolio_img/3.jpg";
+import four from "../../img/portfolio_img/4.jpg";
+import five from "../../img/portfolio_img/5.jpg";
+import six from "../../img/portfolio_img/6.jpg";
 
 const portfolioItems = [
   {
@@ -16,7 +16,7 @@ const portfolioItems = [
     client: "Envato",
     website: "https://www.envato.com/",
 
-    video: "https://www.youtube.com/watch?v=LXb3EKWsInQ",
+    video: "https://www.youtube.com/watch?v=QJl1M6d2Zx4&t=7s",
   },
   {
     link: two,
@@ -36,7 +36,7 @@ const portfolioItems = [
     client: "Envato",
     website: "https://www.envato.com/",
 
-    video: "https://vimeo.com/306705787",
+    video: "https://vimeo.com/241993494",
   },
   {
     link: four,

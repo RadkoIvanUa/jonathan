@@ -4,6 +4,7 @@ import { useInView, useMotionValue, useSpring } from "framer-motion";
 // eslint-disable-next-line react/prop-types
 export default function Counter({ value, direction = "up" }) {
   const ref = useRef(null);
+
   const motionValue = useMotionValue(direction === "down" ? value : 0);
   const springValue = useSpring(motionValue, {
     damping: 100,

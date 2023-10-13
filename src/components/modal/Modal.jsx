@@ -1,19 +1,14 @@
 /* eslint-disable react/prop-types */
 import "./modal.css";
-
 import { IoIosCloseCircleOutline } from "react-icons/io";
-
 import { CgWebsite } from "react-icons/cg";
-
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
-
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import PropTypes from "prop-types";
-import AnimatedCursor from "react-animated-cursor";
 
 export default function ModalWindow({
   isModalOpen,
@@ -24,7 +19,6 @@ export default function ModalWindow({
   title,
   category,
   website,
-
   video,
   selectedColor,
 }) {
@@ -84,6 +78,7 @@ export default function ModalWindow({
                   height={"100%"}
                   controls={true}
                   url={video}
+                  playing={true}
                 />
               ) : (
                 <img src={largeImageURL} alt="" width="800px" />

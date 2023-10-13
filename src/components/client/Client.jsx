@@ -1,16 +1,16 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./client.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 import client1 from "../../img/client/client_1.jpg";
 import client2 from "../../img/client/client_2.jpg";
 import client3 from "../../img/client/client_3.jpg";
 import client4 from "../../img/client/client_4.jpg";
 import client5 from "../../img/client/client_5.jpg";
-import PropTypes from "prop-types";
 
 const swiperSlideStyle = {
   padding: 20,
