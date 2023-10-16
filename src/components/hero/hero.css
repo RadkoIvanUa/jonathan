@@ -5,6 +5,7 @@
       rgba(38, 40, 43, 0.72)
     ),
     url(../../img/hero/hero_mobile.jpg);
+
   background-position: center;
   background-size: cover;
   padding: 100px 0;
@@ -18,6 +19,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.hero > .container {
+  z-index: 2;
 }
 
 .hero__text {
@@ -106,6 +111,8 @@
   display: none;
   border: none;
   background-color: transparent;
+  z-index: 3;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
