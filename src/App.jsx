@@ -10,9 +10,9 @@ import Contact from "./components/contacts/Contact";
 import Footer from "./components/footer/Footer";
 import Cursor from "./components/cursor/Cursor";
 import Settings from "./components/settings/Settings";
+import { TbSquareRoundedArrowUpFilled } from "react-icons/tb";
 import { ToastContainer } from "react-toastify";
 import { Link } from "react-scroll";
-import { TbSquareRoundedArrowUpFilled } from "react-icons/tb";
 import { useEffect, useState, useRef } from "react";
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
   const [selectedColor, setSelectedColor] = useState("rgb(1, 159, 159)");
   const [colorForCursor, setColorForCursor] = useState("1, 159, 159");
   const [cursor, setCursor] = useState(true);
+  const [isParticleOn, setIsParticleOn] = useState(true);
 
   const windowSize = useRef([window.innerWidth]);
 
@@ -44,9 +45,12 @@ function App() {
   const handleScroll = () => {
     setScroll(window.scrollY > 50);
   };
-
   const handleUpScroll = () => {
     setUpScroll(window.scrollY > 400);
+  };
+
+  const handlePatricle = () => {
+    setIsParticleOn(!isParticleOn);
   };
 
   const cursorSwither = () => {
@@ -56,24 +60,30 @@ function App() {
   return (
     <>
       {cursor && <Cursor colorForCursor={colorForCursor} />}
+
       <div id="home"></div>
+
       <header>
         <Header
           className={scroll ? "header stickyadd" : "header"}
           selectedColor={selectedColor}
         />
       </header>
+
       <main>
-        <Hero selectedColor={selectedColor} />
+        <Hero selectedColor={selectedColor} isParticleOn={isParticleOn} />
         <About selectedColor={selectedColor} />
         <Services selectedColor={selectedColor} />
+
         <Portfolio selectedColor={selectedColor} />
         <Client selectedColor={selectedColor} />
         <Contact selectedColor={selectedColor} />
       </main>
+
       <footer>
         <Footer selectedColor={selectedColor} />
       </footer>
+
       <div className={upScroll ? "up__scroll show" : "up__scroll hidden"}>
         <Link className="header__nav-logo" to={"hero"} spy={true}>
           <TbSquareRoundedArrowUpFilled
@@ -83,10 +93,13 @@ function App() {
           />
         </Link>
       </div>
+
       <ToastContainer style={{ zIndex: 1000000 }} />
+
       <Settings
         setSelectedColor={setSelectedColor}
         cursorSwither={cursorSwither}
+        setIsParticleOn={handlePatricle}
       />
     </>
   );

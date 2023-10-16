@@ -1,9 +1,14 @@
 import { useState } from "react";
 import "./settings.css";
 import { AiFillSetting } from "react-icons/ai";
+import PropTypes from "prop-types";
 
 // eslint-disable-next-line react/prop-types
-export default function Settings({ setSelectedColor, cursorSwither }) {
+export default function Settings({
+  setSelectedColor,
+  cursorSwither,
+  setIsParticleOn,
+}) {
   const [isShowed, setIsShowed] = useState(false);
 
   const handleColorSwitcher = () => {
@@ -122,6 +127,23 @@ export default function Settings({ setSelectedColor, cursorSwither }) {
           Default | Custom
         </button>
       </div>
+      <div className="cursor">
+        <span>Particle</span>
+        <button
+          onClick={() => {
+            setIsParticleOn();
+            setIsShowed(false);
+          }}
+        >
+          On | Off
+        </button>
+      </div>
     </div>
   );
 }
+
+Settings.propTypes = {
+  cursorSwither: PropTypes.func,
+  setSelectedColor: PropTypes.func,
+  setIsParticleOn: PropTypes.func,
+};

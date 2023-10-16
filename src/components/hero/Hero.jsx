@@ -1,13 +1,15 @@
 import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import "./hero.css";
+
 import { SlMouse } from "react-icons/sl";
 import { Link } from "react-scroll";
 import { isDesktop, isTablet } from "react-device-detect";
 import { motion } from "framer-motion";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import ParticlesComponent from "../particles/Particles";
 
-export default function Hero({ selectedColor }) {
+export default function Hero({ selectedColor, isParticleOn }) {
   const [btnHovered, setBtnHovered] = useState(false);
   const windowSize = useRef([window.innerWidth]);
 
@@ -19,6 +21,10 @@ export default function Hero({ selectedColor }) {
 
   return (
     <div>
+      {isParticleOn ? (
+        <ParticlesComponent selectedColor={selectedColor} />
+      ) : null}
+
       <motion.div className="hero">
         <div className="container">
           <motion.div
@@ -88,4 +94,5 @@ export default function Hero({ selectedColor }) {
 Hero.propTypes = {
   className: PropTypes.string,
   selectedColor: PropTypes.string,
+  isParticleOn: PropTypes.bool,
 };
